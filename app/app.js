@@ -4,16 +4,14 @@ var app = angular.module('shopApp',['ui.router']);
 
 app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/main');
+  // $urlRouterProvider.otherwise('/main');
 
   $stateProvider
-
       .state('shop', {
       url:'/main',
       templateUrl: 'site/partials/shop-main.html',
       controller: 'ProductCtrl as ctrl'
     })
-
     .state('shop.product', {
       url:'/product',
       templateUrl: 'site/partials/shop-product.html',

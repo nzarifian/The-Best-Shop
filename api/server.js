@@ -12,11 +12,13 @@ app.use(express.static(__dirname + './../app/'));
 var init = require('./routes/init');
 var user_routes = require('./routes/user_routes');
 var product_routes = require('./routes/product_routes');
+var order_routes = require('./routes/order_routes');
 
 //set Routes
 app.use('/api/init',init);
 app.use('/api/users',user_routes);
 app.use('/api/products',product_routes);
+app.use('/api/orders',order_routes);
 
 
 //start server and database

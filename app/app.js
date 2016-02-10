@@ -33,6 +33,10 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
       templateUrl: 'site/partials/admin-orders.html',
       controller: 'OrderCtrl as ctrl'
     })
+    .state('/updateOrder',{
+      templateUrl: 'site/partials/admin-ordersUpdate.html',
+      controller: 'OrderCtrl as ctrl'
+    })
     .state('/main', {
       templateUrl: 'site/partials/shop-main.html',
       controller: 'ProductCtrl as ctrl'

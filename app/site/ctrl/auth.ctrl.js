@@ -1,3 +1,5 @@
+// login function
+
 app.controller('AuthCtrl', AuthCtrl);
 
 function AuthCtrl(productSrv){

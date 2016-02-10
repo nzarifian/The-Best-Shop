@@ -23,7 +23,7 @@ router.get('/:productId',function(req,res){
 });
 
 //update a product
-router.post('/:productId',function(req,res){
+router.put('/:productId',function(req,res){
 	var where = {where:{id:req.params.productId}};
 	var __product = req.body;
 	models.Products.find(where).then(function(product){
@@ -44,7 +44,7 @@ router.post('/:productId',function(req,res){
 });
 
 //add new product
-router.put('/',function(req,res){
+router.post('/',function(req,res){
 	//code for retrieving products
 	var product = req.body;
 		product.status = 'active';

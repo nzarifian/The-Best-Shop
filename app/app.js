@@ -44,9 +44,9 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
     .state('/product', {
       templateUrl: 'site/partials/shop-product.html',
       controller: 'ProductCtrl as ctrl'
-    })
-    .state('/search', {
-      templateUrl: 'site/partials/shop-search.html',
+     })
+    .state('/item', {
+      templateUrl: 'site/partials/shop-item.html',
       controller: 'ProductCtrl as ctrl'
     })
     .state ('/cart', {

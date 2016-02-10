@@ -10,7 +10,7 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
 
   $stateProvider
     .state('/admin', {
-      templateUrl: 'site/partials/admin.html',
+      templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl'
     })
     .state('/dashboard', {
@@ -19,6 +19,14 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
     })
     .state('/addedit', {
       templateUrl: 'site/partials/admin-addedit.html',
+      controller: 'OrderCtrl as ctrl'
+    })
+    .state('/add', {
+      templateUrl: 'site/partials/admin-add.html',
+      controller: 'OrderCtrl as ctrl'
+    })
+    .state('/edit',{
+      templateUrl: 'site/partials/admin-edit.html',
       controller: 'OrderCtrl as ctrl'
     })
     .state('/orders', {

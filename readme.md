@@ -13,7 +13,7 @@ Initialize Admin Account:
 
 Install dependencies, from root run:
 	npm install
-#TODOs
+#TODOs (12:01 from video)
 
 1. 	Complete Admin Panel in app/site/controllers/product.ctrl.js 
 	resolve in app.js

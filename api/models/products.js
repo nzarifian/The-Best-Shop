@@ -17,3 +17,8 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Products;
 };
+
+//SELECTING => GET 
+// UPDATING => POST 
+// INSERTING => PUT 
+//DELETING => DEL 

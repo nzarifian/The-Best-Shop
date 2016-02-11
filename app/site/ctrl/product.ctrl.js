@@ -40,6 +40,6 @@ ProductCtrl.prototype.deleteProduct(){
 ProductCtrl.prototype.updateProduct(){
 	var ctrl = this; 
 	ctrl.product_update_btn="Update";
-	ctrl.productSrv
+	ctrl.productSrv.updateProduct(product);
 
 }

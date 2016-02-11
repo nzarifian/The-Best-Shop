@@ -22,7 +22,21 @@
 		</div>
 		<div>
 			<label>City</label>
-			<input type="text" name="city" placeholder ="City" required>
+
+			<label>Description</label>
+			<textarea type="text" name="name"required></textarea>
+		</div>
+		<div>
+			<label>Category</label>
+			<!-- TODO #2: Set Options -->
+			<select  name="category" ng-options="option as option.label for option in ctrl.categories">
+			</select>
+		</div>
+		<div>
+			<label>Price</label>
+>>>>>>> Stashed changes
+			<input type="number" name="price" required>
+>>>>>>> cf73b47d10e1bc1818b41980dc9796845669866d
 		</div>
 		<div>
 			<label>Province/State</label>

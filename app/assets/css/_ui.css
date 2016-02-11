@@ -48,34 +48,10 @@ a{
 Nav
 */
 
-nav{
-	height:55px;
-	line-height:55px;
-	color:#ff6d37;
-	border-bottom:1px solid #d8d8d8;
-	box-shadow: 0 4px 2px -2px #d8d8d8;
+nav li{
+	display:inline-block;
+	margin-right: 20px;
 }
-
-nav .left-nav{
-	float:left;
-	margin:0px 0px 0px 70px;
-	vertical-align: top;
-}
-
-nav .right-nav{
-	float:right;
-	margin:0px 70px 0px 0px;
-	vertical-align: top;
-}
-
-nav .fa-shopping-cart{
-	margin-right:10px;
-	font-size:2rem;
-}
-nav .cart{
-	font-size:1.6rem;
-}
-
 /*
 Top-content
 */

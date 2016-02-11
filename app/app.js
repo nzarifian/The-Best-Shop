@@ -26,9 +26,11 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/admin',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
-      // resolve:{
-        
-      // }
+      resolve: {
+            products: function(productSrv){
+                return productSrv.getProducts();
+            }
+        }
     })
     .state ('admin.dashboard', {
       url:'/dashboard',
@@ -45,8 +47,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: 'site/partials/admin-add.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state ('edit', {
-      url:'/inventory.edit',
+    .state ('inventory.edit', {
+      url:'/edit',
       templateUrl: 'site/partials/admin-edit.html',
       controller: 'OrderCtrl as ctrl'
     })

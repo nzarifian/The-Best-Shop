@@ -20,6 +20,12 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
       controller: 'ProductCtrl as ctrl'
     })
 
+    .state ('cart', {
+      url:'/cart',
+      templateUrl: 'site/partials/shop-cart.html',
+      controller: 'OrderCtrl as ctrl'
+    })
+
   // .state('shop',{
   //   url:'/',
   //   templateUrl:'site/partials/shop-main.html',
@@ -78,12 +84,6 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider) {
     //   url:'/search',
     //   templateUrl: 'site/partials/shop-search.html',
     //   controller: 'ProductCtrl as ctrl'
-    // })
-
-    // .state ('cart', {
-    //   url:'/cart',
-    //   templateUrl: 'site/partials/shop-cart.html',
-    //   controller: 'OrderCtrl as ctrl'
     // })
 
     // .state('checkout', {

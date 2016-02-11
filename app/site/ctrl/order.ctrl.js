@@ -10,3 +10,9 @@ function OrderCtrl(api, productSrv){
 	ctrl.api = api;
 	ctrl.productSrv = productSrv;
 }
+
+OrderCtrl.prototype.getOrder(productSrv){
+	var ctrl = this; 
+	// grab the products 
+
+}

@@ -12,7 +12,7 @@ function OrderCtrl(api, productSrv){
 
 OrderCtrl.prototype.getOrder = function(productSrv){
 	var ctrl = this; 
-	productSrv.getProducts();
+	// productSrv.getProducts();
 	// grab the products 
 
 }

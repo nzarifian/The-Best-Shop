@@ -1,15 +1,26 @@
-<form>
-	Product Type<input type="text"><br>
-	Product Size <select> 
-		<option> s</option>
-		<option> m</option>
-		<option> l</option>
-	</select>
+<nav>
+		<ul>
+			<li><a ui-sref="shop.product">Products</a></li>
+			<li><a ui-sref="cart">Cart</a></li>
+			<li><a ui-sref="admin.login">Login</a></li>
+			<li>Search</li>
+		</ul>
 
-	<button ng-click=""> add product </button>
+		<div ui-view=""></div>
+</nav>
+<br>	
+		<form>
+			Product Type<input type="text"><br>
+			Product Size <select> 
+				<option> s</option>
+				<option> m</option>
+				<option> l</option>
+			</select>
+
+			<button ng-click=""> add product </button>
 
 
-</form>
+		</form>
 
 <!-- customer view shopping cart with all items, ability to change quanitity and delete items -->
 
@@ -23,3 +34,11 @@
 
 <!-- delete button  -->
 <button>Delete</button>
+
+
+<!-- <ul>
+            <li><a href="shop-product.html">Products</a></li>
+            <li><a href="shop-cart.html">Cart</a></li>
+            <li><a href="admin-login.html">Login</a></li>
+            <li>Search</li>
+        </ul> -->

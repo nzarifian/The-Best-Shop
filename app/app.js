@@ -29,6 +29,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       resolve: {
         products:function(productSrv){
         return productSrv.getProducts();
+        }
       }
     })
     .state ('admin.dashboard', {

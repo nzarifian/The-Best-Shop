@@ -11,7 +11,7 @@ function OrderCtrl(api, productSrv){
 	ctrl.productSrv = productSrv;
 }
 
-OrderCtrl.prototype.getOrder(productSrv){
+OrderCtrl.prototype.getOrder = function(productSrv){
 	var ctrl = this; 
 	// grab the products 
 

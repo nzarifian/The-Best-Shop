@@ -13,9 +13,9 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/',
       templateUrl: 'site/partials/shop-main.html',
       controller: 'ProductCtrl as ctrl',
-      resolve:{
+      // resolve:{
 
-      }
+      // }
     })
     .state ('shop.product', {
       url:'/product',
@@ -26,9 +26,9 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/admin',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
-      resolve:{
+      // resolve:{
         
-      }
+      // }
     })
     .state ('admin.dashboard', {
       url:'/dashboard',
@@ -51,7 +51,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       controller: 'OrderCtrl as ctrl'
     })
     .state ('admin.orders', {
-      url:'orders',
+      url:'/orders',
       templateUrl: 'site/partials/admin-orders.html',
       controller: 'OrderCtrl as ctrl'
     })

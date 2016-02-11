@@ -47,8 +47,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: 'site/partials/admin-add.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state ('edit', {
-      url:'/inventory.edit',
+    .state ('inventory.edit', {
+      url:'/edit',
       templateUrl: 'site/partials/admin-edit.html',
       controller: 'OrderCtrl as ctrl'
     })

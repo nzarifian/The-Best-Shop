@@ -3,29 +3,26 @@
 	Update/Edit Orders
 </h3>
 
-<article class="product-frm">
+<article class="order-frm">
 		<div>
 			<label>Name</label>
 			<input type="text" name="name" placeholder ="First/Last name" required>
 		</div>
 		<div>
-<<<<<<< Updated upstream
 			<label>Email</label>
-			<textarea type="text" name="email"required></textarea>
+			<input type="text" name="email" placeholder ="E-mail" required>
 		</div>
 		<div>
 			<label>Address 1</label>
-			<select  name="address 1" required>
-			</select>
+			<input type="text" name="address" placeholder ="Address 1" required>
 		</div>
 		<div>
 			<label>Address 2</label>
-			<select  name="address 2" required>
-			</select>
+			<input type="text" name="address" placeholder ="Address 2">
 		</div>
 		<div>
 			<label>City</label>
-=======
+
 			<label>Description</label>
 			<textarea type="text" name="name"required></textarea>
 		</div>
@@ -39,16 +36,26 @@
 			<label>Price</label>
 >>>>>>> Stashed changes
 			<input type="number" name="price" required>
+>>>>>>> cf73b47d10e1bc1818b41980dc9796845669866d
 		</div>
 		<div>
-			<label>Quantity</label>
-			<input type="number" name="quantity" required>
+			<label>Province/State</label>
+			<input type="text" name="province" placeholder ="Province/State" required>
 		</div>
 		<div>
-			<button type="submit" ng-click=>{{ctrl.product_update_btn}}</button>
-			<button type="submit" ng-click="ctrl.deleteProduct()">{{ctrl.product_delete_btn}}</button>
+			<label>Postal Code/ZIP</label>
+			<input type="text" name="quantity" placeholder ="Postal Code/ZIP" required>
+		</div>
+		<div>
+			<label>Credit Card Number</label>
+			<input type="number" name="creditcard" placeholder ="Credit Card Number"required>
+		</div>
+		<div>
+			<button type="submit" ng-click=>{{ctrl.submitOrder}}</button>
 		</div>
 </article>
 <div>admin-ordersUpdate.html
 </div>
+
+<div ui-view=""></div>
 

@@ -9,17 +9,21 @@
 			<input type="text" name="name" placeholder ="First/Last name" required>
 		</div>
 		<div>
-			<label>Description</label>
-			<textarea type="text" name="name"required></textarea>
+			<label>Email</label>
+			<textarea type="text" name="email"required></textarea>
 		</div>
 		<div>
-			<label>Category</label>
-			<!-- TODO #2: Set Options -->
-			<select  name="category" ng-options="option as option.label for option in ctrl.categories">
+			<label>Address 1</label>
+			<select  name="address 1" required>
 			</select>
 		</div>
 		<div>
-			<label>Price</label>
+			<label>Address 2</label>
+			<select  name="address 2" required>
+			</select>
+		</div>
+		<div>
+			<label>City</label>
 			<input type="number" name="price" required>
 		</div>
 		<div>

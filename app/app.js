@@ -9,52 +9,58 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('shop', {
+    .state ('shop', {
       url:'/',
       templateUrl: 'site/partials/shop-main.html',
-      controller: 'ProductCtrl as ctrl'
+      controller: 'ProductCtrl as ctrl',
+      resolve:{
+
+      }
     })
-    .state('shop.product', {
+    .state ('shop.product', {
       url:'/product',
       templateUrl: 'site/partials/shop-product.html',
       controller: 'ProductCtrl as ctrl'
     })
-    .state('admin.login', {
+    .state ('admin', {
       url:'/admin',
       templateUrl: 'site/partials/admin-login.html',
-      controller: 'AuthCtrl as ctrl'
+      controller: 'AuthCtrl as ctrl',
+      resolve:{
+        
+      }
     })
-    .state('admin.dashboard', {
+    .state ('admin.dashboard', {
       url:'/dashboard',
       templateUrl: 'site/partials/admin-main.html',
       controller: 'AdminCtrl as ctrl'
     })
-    .state('admin.inventory', {
+    .state ('admin.inventory', {
       url:'/addedit',
       templateUrl: 'site/partials/admin-addedit.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('inventory.add', {
+    .state ('inventory.add', {
       url:'/add',
       templateUrl: 'site/partials/admin-add.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('edit', {
-      url:'inventory.edit',
+    .state ('edit', {
+      url:'/inventory.edit',
       templateUrl: 'site/partials/admin-edit.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('admin.orders', {
-      url:'/orders',
+    .state ('admin.orders', {
+      url:'orders',
       templateUrl: 'site/partials/admin-orders.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('orders.updateOrder', {
+    .state ('orders.updateOrder', {
       url:'/updateOrder',
       templateUrl: 'site/partials/admin-ordersUpdate.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('product.search', {
+    .state ('product.search', {
       url:'/search',
       templateUrl: 'site/partials/shop-search.html',
       controller: 'ProductCtrl as ctrl'

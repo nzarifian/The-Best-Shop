@@ -1,10 +1,31 @@
 
 
-<h1> hello</h1>
-<div ng-repeat="" class="" ng-click="">
-
-    <img ng-src="{{item}}" class="">
-    {{item name}}
-    {{item cost}}
-    </span>
-</div>
+<!-- <section class="view-products" role="view-products"> -->
+<!-- 	hello
+	<div class="row">
+		<div class="columns" ng-repeat="product in ctrl.products"> -->
+<!-- product image -->
+	<div class="container">
+		<div class="row">
+			<div class="product-img" style="background:url('/assets/img/{{product.image}}'); background-size:cover; background-position:center center">
+			</div>
+<!-- product info -->
+			<div class="product-info">
+				<div class="product-name">
+					{{product.name}}
+					<h1>name</h1>
+				</div>
+				<div class="product-brand">
+					{{product.brand}}
+					<h2>product brand</h2>
+				</div>
+				<div class="product-cost">
+					{{product.price | currency}}
+					<h3>price</h3>
+					<button class="fakeitem" ng-click="">fake item</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	</div>
+</section> -->

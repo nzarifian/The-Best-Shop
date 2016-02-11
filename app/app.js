@@ -23,17 +23,22 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: 'site/partials/shop-product.html',
       controller: 'ProductCtrl as ctrl'
     })
-    .state ('admin', {
-      url:'/admin',
+    .state ('shop.item',{
+      url:'/item',
+      templateUrl: 'site/partials/shop-item.html',
+      controller: 'ItemCtrl as ctrl'
+    })
+    .state ('login', {
+      url:'/login',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
-      resolve: {
-        products:function(productSrv){
-        return productSrv.getProducts();
-        }
-      }
+      // resolve: {
+      //   products:function(productSrv){
+      //   return productSrv.getProducts();
+      //   }
+      // }
     })
-    .state ('admin.dashboard', {
+    .state ('admin', {
       url:'/dashboard',
       templateUrl: 'site/partials/admin-main.html',
       controller: 'AdminCtrl as ctrl'

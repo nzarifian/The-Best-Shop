@@ -44,6 +44,6 @@ AuthCtrl.prototype.login = function(){
 
 	}, function(){
 		console.log(response);
-		ctrl.auth_btn = "Errorr";
+		ctrl.auth_btn = "Error";
 	})
 }

@@ -3,6 +3,7 @@ app.controller('ProductCtrl', ProductCtrl);
 function ProductCtrl(productSrv){
 	var ctrl = this;
 	ctrl.productSrv = productSrv;
+	ctrl.cartItems=[];
 
 	ctrl.categories = [
 		{label:'Shirts',value:'shirts'},
@@ -19,7 +20,7 @@ function ProductCtrl(productSrv){
 ProductCtrl.prototype.addProduct(){
 	var ctrl = this;
 	var product = {
-		name: ctrl.name,
+		name: ctrl.nam  e,
 		image: ctrl.image,
 		description: ctrl.description,
 		category: ctrl.category,
@@ -41,5 +42,9 @@ ProductCtrl.prototype.updateProduct(){
 	var ctrl = this; 
 	ctrl.product_update_btn="Update";
 	ctrl.productSrv.updateProduct(product);
+
+}
+
+ProductCtrl.prototype.addToCart(){
 
 }

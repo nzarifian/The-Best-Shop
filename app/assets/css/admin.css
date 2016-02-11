@@ -9,7 +9,7 @@
 	color:white;
 }
 #admin .nav-panel{
-	background:#ff6d37;
+	background:#929292;
 	padding:40px;
 	width:25%;
 	height:100%;
@@ -33,7 +33,7 @@
 	color:white;
 }
 #admin .nav-panel ul li:hover{
-	color:#2b96ff;
+	color:#a88b80;
 }
 
 #admin .main-content{

@@ -1,7 +1,8 @@
 app.controller('AdminCtrl', AdminCtrl);
 
-function AdminCtrl(productSrv, products, $scope, $state){
+function AdminCtrl(productSrv, products, $scope, $state, api){
 	var ctrl = this;
+	ctrl.api = api;
 	ctrl.$state= $state;
 	ctrl.$scope = $scope;
 	ctrl.products = products;
@@ -25,6 +26,20 @@ function AdminCtrl(productSrv, products, $scope, $state){
 	});
 }
 
+<<<<<<< HEAD
+=======
+AdminCtrl.prototype.editProduct = function(products){
+	var ctrl = this;
+	ctrl.products = products;
+	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
+}
+
+AdminCtrl.prototype.addProduct = function(products){
+	var ctrl = this;
+	ctrl.products = products;
+	ctrl.$state.go('admin.inventory-add');
+}
+>>>>>>> 387081564a5ddab47eb8244267a604ce325f99b8
 AdminCtrl.prototype.logout = function(){
 	var ctrl =this;
 
@@ -32,4 +47,6 @@ AdminCtrl.prototype.logout = function(){
 	ctrl.$state.go('auth');
 
 }
+
+
 

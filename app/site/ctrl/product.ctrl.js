@@ -26,6 +26,7 @@ ProductCtrl.prototype.addProduct = function (){
 		price: ctrl.price,
 		status:'active'
 	};
+
 	ctrl.productSrv.addProduct(product);
 }
 

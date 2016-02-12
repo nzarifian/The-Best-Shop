@@ -1,10 +1,10 @@
 app.controller('AdminCtrl', AdminCtrl);
 
-function AdminCtrl(productSrv, products, $scope, $state, $location){
+function AdminCtrl(productSrv, $scope, $state, $location){
 	var ctrl = this;
 	ctrl.$state= $state;
 	ctrl.$scope = $scope;
-	ctrl.products = products;
+	ctrl.products = productSrv;
 	ctrl.productSrv = productSrv;
 	ctrl.$location = $location;
 	// adding location url to Inventory Page Button//
@@ -13,8 +13,6 @@ function AdminCtrl(productSrv, products, $scope, $state, $location){
 	if(localStorage.authToken == undefined || localStorage.authToken == null){
 		$state.go('login');
 	}
-
-	ctrl.products = products;
 	
 	if(ctrl.products.length > 0 ){
 		ctrl.is_products = true;

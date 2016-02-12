@@ -60,7 +60,12 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     .state ('admin.inventory', {
       url:'/addedit',
       templateUrl: 'site/partials/admin-addedit.html',
-      // controller: 'AdminCtrl as ctrl',
+      //controller: 'AdminCtrl as ctrl',
+      resolve:{
+        products: function(productSrv){
+          return productSrv.getProducts();
+        }
+      }
     })
 
     .state ('admin.inventory-add', {
@@ -73,10 +78,16 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
         }
       }
     })
+
     .state ('admin.inventory-edit', {
       url:'/edit',
       templateUrl: 'site/partials/admin-edit.html',
-      controller: 'OrderCtrl as ctrl'
+      controller: 'ProductCtrl as ctrl'
+      resolve:{
+        products: function(productSrv){
+          return productSrv.getProducts();
+        }
+      }
     })
     .state ('admin.orders', {
       url:'/orders',

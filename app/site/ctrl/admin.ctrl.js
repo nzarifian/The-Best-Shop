@@ -26,6 +26,8 @@ function AdminCtrl(productSrv, products, $scope, $state, api){
 	});
 }
 
+<<<<<<< HEAD
+=======
 AdminCtrl.prototype.editProduct = function(products){
 	var ctrl = this;
 	ctrl.products = products;
@@ -37,6 +39,7 @@ AdminCtrl.prototype.addProduct = function(products){
 	ctrl.products = products;
 	ctrl.$state.go('admin.inventory-add');
 }
+>>>>>>> 387081564a5ddab47eb8244267a604ce325f99b8
 AdminCtrl.prototype.logout = function(){
 	var ctrl =this;
 

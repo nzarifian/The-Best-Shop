@@ -4,6 +4,7 @@ function ProductCtrl(productSrv){
 	var ctrl = this;
 	ctrl.productSrv = productSrv;
 	ctrl.cartItems=[];
+	ctrl.products = [];
 
 	ctrl.categories = [
 		{label:'Shirts',value:'shirts'},
@@ -12,9 +13,7 @@ function ProductCtrl(productSrv){
 		{label:'Dress',value:'dress'},
 		{label:'Outerwear',value:'outerwear'},
 	];
-	
 }
-
 
 ProductCtrl.prototype.addProduct = function (){
 	var ctrl = this;
@@ -27,7 +26,13 @@ ProductCtrl.prototype.addProduct = function (){
 		price: ctrl.price,
 		status:'active'
 	};
+
 	ctrl.productSrv.addProduct(product);
+}
+
+ProductCtrl.prototype.editProduct = function(){
+	var ctrl = this;
+	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
 }
 
 // ProductCtrl.prototype.deleteProduct = function(){

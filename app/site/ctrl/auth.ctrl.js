@@ -39,12 +39,7 @@ AuthCtrl.prototype.login = function(){
 			console.log('test1');
 
 			if (response.data.user != null){
-<<<<<<< HEAD
-				console.log("test2");
-				ctrl.$state.go('admin.dashboard');
-=======
 				ctrl.$state.go('admin');
->>>>>>> 59d230b27c39d5af14907c9ab68c5a0c681d8369
 			}
 		}
 

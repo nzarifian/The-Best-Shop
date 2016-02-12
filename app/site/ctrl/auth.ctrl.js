@@ -17,7 +17,7 @@ function AuthCtrl($state, api){
 	//var goDashboard = $location.path('/dashboard');
 
 	if(localStorage.authToken){
-		ctrl.$state.go('admin');
+		ctrl.$state.go('auth');
 	}	
 }
 
@@ -34,16 +34,23 @@ AuthCtrl.prototype.login = function(){
 	.then(function(res){
 		console.log(res);
 		//successfull response
-		if(res.status == 200){
-			ctrl.auth_btn = "Success";
-			//user exists
-			if(res.data.user != null){
-				ctrl.$state.go('admin');
-			}
-		}
-		else{
-			ctrl.auth_btn = 'Invalid Password';
-		}
+		if(response.status == 200){
+            ctrl.auth_btn = "Success";
+            console.log('test1');
+
+        if (response.data.user != null){
+            ctrl.$state.go('admin');
+
+            console.log("test2");
+
+            ctrl.$state.go('admin');
+
+            }
+        }
+
+        else{
+            ctrl.auth_btn = 'Invalid Password';
+        }
 
 	}, function(){
 		console.log(response);

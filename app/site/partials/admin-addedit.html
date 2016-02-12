@@ -1,7 +1,6 @@
+<div>
 <button ng-click="ctrl.product_add_btn()">Add Product</button>
 <br><br>
-
-<div ng-repeat="product in ctrl.products">
 
 	<table class="products-list table">
 		<tr>
@@ -16,7 +15,7 @@
 			<td>{{product.name}}</td>
 			<td>{{product.price}}</td>
 			<td>{{product.quantity}}</td>
-			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
+			<td><a ng-click="ctrl.editProduct()">Edit</a></td>
 		</tr>
 	</table>
 

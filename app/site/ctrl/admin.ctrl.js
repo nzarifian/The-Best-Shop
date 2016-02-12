@@ -1,10 +1,10 @@
 app.controller('AdminCtrl', AdminCtrl);
 
-function AdminCtrl(productSrv, $scope, $state, $location){
+function AdminCtrl(productSrv, products, $scope, $state, $location){
 	var ctrl = this;
 	ctrl.$state= $state;
 	ctrl.$scope = $scope;
-	ctrl.products = productSrv;
+	ctrl.products = products;
 	ctrl.productSrv = productSrv;
 	ctrl.$location = $location;
 	// adding location url to Inventory Page Button//

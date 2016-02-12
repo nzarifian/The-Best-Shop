@@ -1,24 +1,14 @@
-
-<br>	
-		<form>
-			Product Type<input type="text"><br>
-			Product Size <select> 
-				<option> s</option>
-				<option> m</option>
-				<option> l</option>
-			</select>
-
-			<button ng-click=""> add product </button>
-
-
-		</form>
-
-<!-- customer view shopping cart with all items, ability to change quanitity and delete items -->
-
-
-
 <!-- Display Stored Information  -->
+<div class="cart">
+	<h2>Your Order</h2>
+	<h3>{{name of order here find it first}}</h3>
+	<div class="row">
+		<table class="table">
+		
 
+	</div>
+
+	</tb>
 
 <!-- update button  -->
 	<button>Update Cart</button>
@@ -26,10 +16,28 @@
 <!-- delete button  -->
 <button>Delete</button>
 
+</div>
 
-<!-- <ul>
-            <li><a href="shop-product.html">Products</a></li>
-            <li><a href="shop-cart.html">Cart</a></li>
-            <li><a href="admin-login.html">Login</a></li>
-            <li>Search</li>
-        </ul> -->
+<div id="movie-details">
+  <h1 class="text-center">{{ctrl.current_movie.Title}}</h1>
+  <div class="row">
+    <div class="col-xs-5">
+      <img class="movie-poster" ng-src="{{ctrl.current_movie.Poster}}">
+    </div>
+    <div class="col-xs-7">
+      <table class="table" >
+          <tr ng-repeat="(key,value) in ctrl.current_movie">
+            <td>{{key}}<td>
+            <td>{{value}}<td>
+          </tr>
+
+      </table>
+    </div>    
+  </div>
+  <div class="row">
+    <div class=buttons>
+      <!--TODO #4: Make this button take you back to the home page-->
+      <a class="btn btn-primary" ng-click="ctrl.goBack()">Back</a>
+    </div>
+  </div>
+</div>

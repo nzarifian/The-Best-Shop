@@ -30,7 +30,7 @@ ProductService.prototype.addProduct = function(product){
 		if(res.status === 200){
 			//product was added successfully
 			_this.products.push(res.data.product);
-			_this.state.go('admin');
+			_this.state.go('admin.inventory');
 
 		}
 	})
@@ -57,7 +57,7 @@ ProductService.prototype.deleteProduct = function(productId){
 		if(res.status === 200){
 			//product was deleted successfully
 			_this.removeProduct(productId);
-			_this.state.go('admin');
+			_this.state.go('admin.inventory');
 			
 		}
 	})

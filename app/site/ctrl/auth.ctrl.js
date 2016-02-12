@@ -34,7 +34,7 @@ AuthCtrl.prototype.login = function(){
 			ctrl.auth_btn = "Success!";
 
 			if (response.data.user != null){
-				ctrl.$state.go('admin');
+				ctrl.$state.go('admin.dash');
 			}
 		}
 

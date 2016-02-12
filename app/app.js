@@ -61,11 +61,11 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/addedit',
       templateUrl: 'site/partials/admin-addedit.html',
       //controller: 'AdminCtrl as ctrl',
-      resolve:{
-        products: function(productSrv){
-          return productSrv.getProducts();
-        }
-      }
+      // resolve:{
+      //   products: function(productSrv){
+      //     return productSrv.getProducts();
+      //   }
+      // }
     })
 
     .state ('admin.inventory-add', {
@@ -83,11 +83,6 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/edit',
       templateUrl: 'site/partials/admin-edit.html',
       controller: 'ProductCtrl as ctrl'
-      resolve:{
-        products: function(productSrv){
-          return productSrv.getProducts();
-        }
-      }
     })
     .state ('admin.orders', {
       url:'/orders',

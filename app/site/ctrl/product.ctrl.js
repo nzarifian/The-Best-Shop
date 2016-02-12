@@ -27,26 +27,28 @@ ProductCtrl.prototype.addProduct = function (){
 		status:'active'
 	};
 
+	ctrl.product_add_btn = "Add";
 	ctrl.productSrv.addProduct(product);
 }
 
-ProductCtrl.prototype.editProduct = function(){
+ProductCtrl.prototype.editProduct = function(products){
 	var ctrl = this;
+	ctrl.products = products;
 	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
 }
 
-// ProductCtrl.prototype.deleteProduct = function(){
-// 	var ctrl = this; 
-// 	ctrl.product_delete_btn="Delete";
-// 	ctrl.productSrv.deleteProduct(product);
-// }
+ProductCtrl.prototype.deleteProduct = function(){
+	var ctrl = this; 
+	ctrl.product_delete_btn="Delete";
+	ctrl.productSrv.deleteProduct(product);
+}
 
-// ProductCtrl.prototype.updateProduct = function(){
-// 	var ctrl = this; 
-// 	ctrl.product_update_btn="Update";
-// 	ctrl.productSrv.updateProduct(product);
+ProductCtrl.prototype.updateProduct = function(){
+	var ctrl = this; 
+	ctrl.product_update_btn="Update";
+	ctrl.productSrv.updateProduct(product);
 
-// }
+}
 
 // ProductCtrl.prototype.addToCart = function(){
 

@@ -17,7 +17,7 @@ function AuthCtrl($state, api, $location){
 	var goDashboard = $location.path('/dashboard');
 
 	if(localStorage.authToken){
-		ctrl.$state.go('admin');
+		ctrl.$state.go('auth');
 	}	
 }
 
@@ -39,16 +39,12 @@ AuthCtrl.prototype.login = function(){
 			console.log('test1');
 
 			if (response.data.user != null){
-<<<<<<< HEAD
-				ctrl.$state.go('admin.dash');
-=======
-<<<<<<< HEAD
-				console.log("test2");
-				ctrl.$state.go('admin.dashboard');
-=======
 				ctrl.$state.go('admin');
->>>>>>> 59d230b27c39d5af14907c9ab68c5a0c681d8369
->>>>>>> 2c8fa875643103e18b36b53fc08badea7c1284ec
+
+				console.log("test2");
+
+				ctrl.$state.go('admin');
+
 			}
 		}
 

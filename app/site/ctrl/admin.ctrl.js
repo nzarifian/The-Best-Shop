@@ -38,3 +38,4 @@ AdminCtrl.prototype.logout = function(){
 	ctrl.$state.go('auth');
 
 }
+

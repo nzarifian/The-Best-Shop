@@ -2,11 +2,11 @@
 
 app.controller('AuthCtrl', AuthCtrl);
 
-function AuthCtrl($state, api, $location){
+function AuthCtrl($state, api){
 	var ctrl = this;
 	ctrl.$state = $state;
 	ctrl.api = api;
-	ctrl.$location = $location;
+	//ctrl.$location = $location;
 
 	ctrl.password;
 	ctrl.email;
@@ -14,7 +14,7 @@ function AuthCtrl($state, api, $location){
 	ctrl.auth_button = 'Continue';
 
 	// location url to admin login//
-	var goDashboard = $location.path('/dashboard');
+	//var goDashboard = $location.path('/dashboard');
 
 	if(localStorage.authToken){
 		ctrl.$state.go('admin');
@@ -22,32 +22,25 @@ function AuthCtrl($state, api, $location){
 }
 
 AuthCtrl.prototype.login = function(){
-	var ctrl = this
+	var ctrl = this;
 
 	var payload = {
 		email:ctrl.email,
 		password:ctrl.password
 	}
-
 	ctrl.auth_btn = "Authorizing";
-	ctrl.api.request('/users/login', payload, 'POST')
-	.then(function(response){
-		console.log(response);
-
-		if(response.status == 200){
+	//make api call
+	ctrl.api.request('/users/login',payload,'POST')
+	.then(function(res){
+		console.log(res);
+		//successfull response
+		if(res.status == 200){
 			ctrl.auth_btn = "Success";
-			console.log('test1');
-
-			if (response.data.user != null){
-<<<<<<< HEAD
-				console.log("test2");
-				ctrl.$state.go('admin.dashboard');
-=======
+			//user exists
+			if(res.data.user != null){
 				ctrl.$state.go('admin');
->>>>>>> 59d230b27c39d5af14907c9ab68c5a0c681d8369
 			}
 		}
-
 		else{
 			ctrl.auth_btn = 'Invalid Password';
 		}

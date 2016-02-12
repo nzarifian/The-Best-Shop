@@ -11,7 +11,7 @@ function AdminCtrl(productSrv, products, $scope, $state, $location){
 	var addInventory = $location.path('/add');
 
 	if(localStorage.authToken == undefined || localStorage.authToken == null){
-		$state.go('admin.login');
+		$state.go('login');
 	}
 
 	ctrl.products = products;

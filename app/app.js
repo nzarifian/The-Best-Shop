@@ -32,11 +32,11 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url:'/login',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
-      // resolve: {
-      //   products:function(productSrv){
-      //   return productSrv.getProducts();
-      //   }
-      // }
+        resolve: {
+          products:function(productSrv){
+          return productSrv.getProducts();
+          }
+        }
     })
     .state ('admin', {
       url:'/dashboard',

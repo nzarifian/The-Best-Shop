@@ -1,6 +1,25 @@
-<div>
-       <ul>
-       	<button>a href="admin-edit.html">Edit Product</button>
-       	<button ng-click="ctrl.addInventory">Add Product</button>
-       </ul>
+
+<button ng-click="ctrl.addProduct(product)">Add Product</button>
+<br><br>
+
+<div ng-repeat="product in ctrl.products">
+
+	<table class="products-list table">
+		<tr>
+			<th>Category</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr ng-repeat="product in ctrl.products">
+			<td>{{product.category}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.quantity}}</td>
+			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
+		</tr>
+	</table>
+
+	<div ui-view=""></div>
 </div>

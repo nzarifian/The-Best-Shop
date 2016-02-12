@@ -65,12 +65,12 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     .state ('admin.inventory-add', {
       url:'/add',
       templateUrl: 'site/partials/admin-add.html',
-      controller: 'OrderCtrl as ctrl'
+      controller: 'ProductCtrl as ctrl'
     })
     .state ('admin.inventory-edit', {
       url:'/edit',
       templateUrl: 'site/partials/admin-edit.html',
-      controller: 'OrderCtrl as ctrl'
+      controller: 'ProductCtrl as ctrl'
     })
     .state ('admin.orders', {
       url:'/orders',

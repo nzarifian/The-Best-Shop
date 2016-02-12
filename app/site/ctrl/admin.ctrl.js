@@ -25,12 +25,6 @@ function AdminCtrl(productSrv, products, $scope, $state){
 	});
 }
 
-AdminCtrl.prototype.editProduct = function(products){
-	var ctrl = this;
-	ctrl.products = products;
-	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
-}
-
 AdminCtrl.prototype.logout = function(){
 	var ctrl =this;
 

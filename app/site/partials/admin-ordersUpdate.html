@@ -26,18 +26,7 @@
 			<label>Description</label>
 			<textarea type="text" name="name"required></textarea>
 		</div>
-		<div>
-			<label>Category</label>
-			<!-- TODO #2: Set Options -->
-			<select  name="category" ng-options="option as option.label for option in ctrl.categories">
-			</select>
-		</div>
-		<div>
-			<label>Price</label>
->>>>>>> Stashed changes
-			<input type="number" name="price" required>
->>>>>>> cf73b47d10e1bc1818b41980dc9796845669866d
-		</div>
+
 		<div>
 			<label>Province/State</label>
 			<input type="text" name="province" placeholder ="Province/State" required>
@@ -51,8 +40,12 @@
 			<input type="number" name="creditcard" placeholder ="Credit Card Number"required>
 		</div>
 		<div>
-			<button type="submit" ng-click=>{{ctrl.submitOrder}}</button>
+			<button type="submit" ng-click="ctrl.updateOrder()">{{ctrl.product_update_btn}}</button>
+			<button type="submit" ng-click="ctrl.deleteOrder()">{{ctrl.product_delete_btn}}</button>
+
 		</div>
+
+
 </article>
 <div>admin-ordersUpdate.html
 </div>

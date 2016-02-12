@@ -1,17 +1,14 @@
 app.controller('AdminCtrl', AdminCtrl);
 
-function AdminCtrl(productSrv, products, $scope, $state, $location){
+function AdminCtrl(productSrv, products, $scope, $state){
 	var ctrl = this;
 	ctrl.$state= $state;
 	ctrl.$scope = $scope;
 	ctrl.products = products;
 	ctrl.productSrv = productSrv;
-	ctrl.$location = $location;
-	// adding location url to Inventory Page Button//
-	var addInventory = $location.path('/add');
-
+	
 	if(localStorage.authToken == undefined || localStorage.authToken == null){
-		$state.go('login');
+		$state.go('admin');
 	}
 	
 	if(ctrl.products.length > 0 ){
@@ -28,16 +25,16 @@ function AdminCtrl(productSrv, products, $scope, $state, $location){
 	});
 }
 
-AdminCtrl.prototype.editProduct = function(product){
+AdminCtrl.prototype.editProduct = function(products){
 	var ctrl = this;
-
-	ctrl.$state.go('inventory.edit',{productId:product.id});
+	ctrl.products =products;
+	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
 
 }
 
-AdminCtrl.prototype.logout = function(){
-	var ctrl = this;
+// AdminCtrl.prototype.logout = function(){
+// 	var ctrl = this;
 
-	localStorage.removeItem('authToken');
-	ctrl.$state.go('admin.login');
-}
+// 	localStorage.removeItem('authToken');
+// 	ctrl.$state.go('admin.login');
+// }

@@ -1,15 +1,10 @@
-
-<section id="admin" class="clearfix">
-	<aside class="">
+<aside class="">
 		<h3>Admin Panel</h3>
 		<ul>
 			<li><a ui-sref="admin.inventory">Inventory</a></li>
 			<li><a ui-sref="admin.orders">Orders</a></li>
 			<li><a ng-click="ctrl.logout()">Log Out</a></li>
 		</ul>
-	</aside>
+	<div ui-view=""></div>
+</aside>
 
-
-</section>
-
-<div ui-view=""></div>

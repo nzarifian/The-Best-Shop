@@ -27,7 +27,7 @@ ProductCtrl.prototype.addProduct = function (){
 		price: ctrl.price,
 		status:'active'
 	};
-	ctrl.product_add_btn="Add";
+	// ctrl.product_add_btn="Add";
 	ctrl.productSrv.addProduct(product);
 }
 

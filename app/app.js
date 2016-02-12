@@ -98,3 +98,4 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     };
   });
 });
+>>>>>>> 59d230b27c39d5af14907c9ab68c5a0c681d8369

@@ -8,7 +8,7 @@ function AdminCtrl(productSrv, products, $scope, $state, $location){
 	ctrl.productSrv = productSrv;
 	ctrl.$location = $location;
 	// adding location url to Inventory Page Button//
-	var addInventory = $location.path('/add')
+	var addInventory = $location.path('/add');
 
 	if(localStorage.authToken == undefined || localStorage.authToken == null){
 		$state.go('admin.login');

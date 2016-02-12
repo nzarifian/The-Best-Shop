@@ -1,20 +1,18 @@
 <title>Admin Login</title>
 
-	<h1 style="margin-left:65px;">Admin Login</h1>
-	<form method="post" class="stacked-form" style="display:inline-block; margin-left: 100px;">
-            <div class="row">
-             
+<h1 style="margin-left:65px;">Admin Login</h1>
+<form method="post" class="stacked-form" style="display:inline-block; margin-left: 100px;">
+  <div class="row">
+           
     <h3>Enter Email</h3>
-                <input ng-model="ctrl.email" class="form-input bs-input-box stacked-input-box" type="text" name="EmailAddress" value="" placeholder="Email Address"  ng-model="ctrl.email"/>
-             </div>
-        <br>
-            <div class="row">
-              
-     <h3>Enter Password</h3>
-                <input ng-model="ctrl.password" class="form-input bs-input-box stacked-input-box" type="password" name="Password" placeholder="Password" ng-model="ctrl.password"/>
-             </div>
-        <br> 
-            <input type="submit" value="{{ctrl.auth_btn}}" class="form-input btn btn-primary bs-form__button btn-lg stacked-input-box" ng-click="ctrl.login()"/>
-          </form>
+    <input ng-model="ctrl.email" class="form-input bs-input-box stacked-input-box" type="text" name="EmailAddress" value="" placeholder="Email Address"  ng-model="ctrl.email"/>
+  </div>
+  <div class="row">
+            
+    <h3>Enter Password</h3>
+    <input ng-model="ctrl.password" class="form-input bs-input-box stacked-input-box" type="password" name="Password" placeholder="Password" ng-model="ctrl.password"/>
+  </div>
+  <input type="submit" value="{{ctrl.auth_btn}}" class="form-input btn btn-primary bs-form__button btn-lg stacked-input-box" ng-click="ctrl.login()"/>
+</form>
 
-</div>
+<div ui-view=""></div>

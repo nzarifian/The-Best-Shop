@@ -6,7 +6,7 @@ function AdminCtrl(productSrv, products, $scope, $state){
 	ctrl.$scope = $scope;
 	ctrl.products = products;
 	ctrl.productSrv = productSrv;
-	
+
 	if(localStorage.authToken == undefined || localStorage.authToken == null){
 		$state.go('admin');
 	}
@@ -27,14 +27,15 @@ function AdminCtrl(productSrv, products, $scope, $state){
 
 AdminCtrl.prototype.editProduct = function(products){
 	var ctrl = this;
-	ctrl.products =products;
+	ctrl.products = products;
 	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
+}
+
+AdminCtrl.prototype.logout = function(){
+	var ctrl =this;
+
+	localStorage.removeItem('authToken');
+	ctrl.$state.go('auth');
 
 }
 
-// AdminCtrl.prototype.logout = function(){
-// 	var ctrl = this;
-
-// 	localStorage.removeItem('authToken');
-// 	ctrl.$state.go('admin.login');
-// }

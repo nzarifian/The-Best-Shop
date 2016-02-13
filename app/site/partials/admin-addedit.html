@@ -1,5 +1,5 @@
-<div>
-<button ng-click="ctrl.product_add_btn()">Add Product</button>
+<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -80px;">
+<button ng-click="ctrl.invent_add_btn()">Add Product</button>
 <br><br>
 
 	<table class="products-list table">
@@ -15,7 +15,7 @@
 			<td>{{product.name}}</td>
 			<td>{{product.price}}</td>
 			<td>{{product.quantity}}</td>
-			<td><a ng-click="ctrl.editProduct()">Edit</a></td>
+			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
 	</table>
 

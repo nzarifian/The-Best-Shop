@@ -34,8 +34,13 @@ AdminCtrl.prototype.logout = function(){
 
 }
 
-AdminCtrl.prototype.product_add_btn=function(){
+AdminCtrl.prototype.invent_add_btn=function(){
 	var ctrl = this; 
 	ctrl.$state.go('admin.inventory-add');
 
+}
+
+AdminCtrl.prototype.editProduct = function(product){
+	var ctrl = this;
+	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
 }

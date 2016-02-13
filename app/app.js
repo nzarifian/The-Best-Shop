@@ -80,7 +80,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin.inventory-edit', {
-      url:'/edit',
+      url:'edit_product/:productId',
       templateUrl: 'site/partials/admin-edit.html',
       controller: 'ProductCtrl as ctrl',
       resolve:{

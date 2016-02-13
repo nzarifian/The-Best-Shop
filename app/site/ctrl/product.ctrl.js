@@ -25,11 +25,10 @@ function ProductCtrl(productSrv, $state, $stateParams, api){
 		.then(function(res){
 			console.log(res);
 			ctrl.product = res.data.product;
-			//TODO #2 set category based on edit form based on 
-			//product category
-			for (var category in ctrl.categories){
-				if(ctrl.product.category == ctrl.categories[category].value){
-					ctrl.category = category;
+		
+			for (var index in ctrl.categories){
+				if(ctrl.product.category == ctrl.categories[index].value){
+					ctrl.category = ctrl.categories[index];
 				}
 			}
 		})
@@ -52,7 +51,7 @@ ProductCtrl.prototype.addProduct = function (){
 }
 
 
-ProductCtrl.prototype.deleteProduct = function(product){
+ProductCtrl.prototype.deleteProduct = function(){
 	var ctrl = this; 
 	//ctrl.product_delete_btn="Delete";
 	ctrl.productSrv.deleteProduct(ctrl.product.id);
@@ -60,7 +59,7 @@ ProductCtrl.prototype.deleteProduct = function(product){
 
 ProductCtrl.prototype.updateProduct = function(){
 	var ctrl = this; 
-	//ctrl.product_update_btn="Update";
+	ctrl.product.category = ctrl.category.value
 	ctrl.productSrv.updateProduct(ctrl.product, ctrl.product.id);
 
 }

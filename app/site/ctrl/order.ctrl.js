@@ -13,9 +13,6 @@ function OrderCtrl(api, productSrv, $state){
 
 OrderCtrl.prototype.getOrder = function(productSrv){
 	var ctrl = this; 
-	// productSrv.getProducts();
-	// grab the products 
-
 }
 
 

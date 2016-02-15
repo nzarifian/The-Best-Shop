@@ -28,7 +28,7 @@ AuthCtrl.prototype.login = function(){
     ctrl.api.request('/users/login',payload,'POST')
     .then(function(response){
         console.log(response);
-        //successfull response
+        //successfull responseva
         if(response.status == 200){
            ctrl.auth_btn = "Success";
 

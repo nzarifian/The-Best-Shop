@@ -1,12 +1,21 @@
-app.controller('ItemCtrl',ItemCtrl);
+app.controller('ShopCtrl',ShopCtrl);
 
-function ItemCtrl($scope, api, productSrv, $state){
+function ShopCtrl($scope, api, productSrv, products){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.productSrv = productSrv;
+
+	ctrl.products = products;
+	ctrl.category = '';
+
+	$scope.$watch(function(){
+		return productSrv.products;
+	}, function (newValue) {
+		ctrl.products = productSrv.products;
+	});
 }
 
-ItemCtrl.prototype.goToItem = function(){
+ShopCtrl.prototype.goToProduct = function(product){
 	var ctrl = this;
-	ctrl.$state.go('shop.item')
+	ctrl.$state.go('shop.item',{productId:product.id});
 }

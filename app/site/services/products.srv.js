@@ -58,8 +58,7 @@ ProductService.prototype.deleteProduct = function(productId){
 		if(res.status === 200){
 			//product was deleted successfully
 			_this.removeProduct(productId);
-			_this.state.go('admin.inventory');
-			
+			_this.state.go('admin.inventory');			
 		}
 	})
 }

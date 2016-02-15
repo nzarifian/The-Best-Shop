@@ -44,3 +44,8 @@ AdminCtrl.prototype.editProduct = function(product){
 	var ctrl = this;
 	ctrl.$state.go('admin.inventory-edit',{productId:product.id});
 }
+
+AdminCtrl.prototype.editOrder = function(product){
+	var ctrl = this;
+	ctrl.$state.go('orders.updateOrder',{productId:product.id});
+}

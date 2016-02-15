@@ -1,43 +1,29 @@
-<!-- Display Stored Information  -->
-<div class="cart">
-	<h2>Your Order</h2>
-	<h3>{{name of order here find it first}}</h3>
-	<div class="row">
-		<table class="table">
-		
+<div style="width:600px; margin-left: 50px;">
+<h2>Your Order</h2>
+    <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>&nbsp;</th>
+        </tr>
 
-	</div>
+        <tr ng-repeat="item in invoice.items">
+            <td><input type="text" ng-model="item.description"class="input-small"></td>           
+            <td><input type="number" ng-model="item.cost" ng-required class="input-mini"></td>
+            <td><input type="number" ng-model="item.quantity" ng-required class="input-mini"></td>
+            <td>{{item.quantity * item.cost | currency}}</td>
+            <td>
+                [<a href ng:click="removeItem($index)">X</a>]
+            </td>
+        </tr>
 
-	</tb>
-
-<!-- update button  -->
-	<button>Update Cart</button>
-
-<!-- delete button  -->
-<button>Delete</button>
-
-</div>
-
-<div id="movie-details">
-  <h1 class="text-center">{{ctrl.current_movie.Title}}</h1>
-  <div class="row">
-    <div class="col-xs-5">
-      <img class="movie-poster" ng-src="{{ctrl.current_movie.Poster}}">
-    </div>
-    <div class="col-xs-7">
-      <table class="table" >
-          <tr ng-repeat="(key,value) in ctrl.current_movie">
-            <td>{{key}}<td>
-            <td>{{value}}<td>
-          </tr>
-
-      </table>
-    </div>    
-  </div>
-  <div class="row">
-    <div class=buttons>
-      <!--TODO #4: Make this button take you back to the home page-->
-      <a class="btn btn-primary" ng-click="ctrl.goBack()">Back</a>
-    </div>
-  </div>
+        <tr>
+            <td><button ng-click="addItem()">add item</button></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total() | currency}}</td>
+        </tr>
+    </table>
 </div>

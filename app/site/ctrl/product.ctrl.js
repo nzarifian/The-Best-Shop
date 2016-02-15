@@ -1,6 +1,6 @@
 app.controller('ProductCtrl', ProductCtrl);
 
-function ProductCtrl(productSrv, $state, $stateParams, api){
+function ProductCtrl(productSrv,$state,$stateParams,api){
 	var ctrl = this;
 	ctrl.productSrv = productSrv;
 	ctrl.cartItems=[];

@@ -1,1 +1,23 @@
 <div class="jumbotron"></div>
+	<div ui-view=""></div>
+
+<section class="product-view" role="product-view">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
+			<div class="product-img" style="background:url('/assets/img/{{product.image}}');background-size:cover;background-position:center center" ng-click="ctrl.goToProduct(product)">
+			</div>
+
+			<div class="product-info">
+				<div class="product-name" ng-click="ctrl.goToProduct(product)">
+					{{product.name}}
+				</div>
+				<div class="product-brand" ng-click="ctrl.goToProduct(product)">
+					<em>{{product.description}}</em>
+				</div>
+				<div class="product-cost" ng-click="ctrl.goToProduct(product)">
+					{{product.price | currency}}
+				</div>
+			</div>
+		</div>
+	</div>
+<section>

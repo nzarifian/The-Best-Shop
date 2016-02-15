@@ -16,18 +16,28 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     .state ('shop.main', {
       url:'/main',
       templateUrl: 'site/partials/shop-main.html',
-      controller: 'ProductCtrl as ctrl',
+      controller: 'ShopCtrl as ctrl',
+      resolve:{
+        products: function(productSrv){
+          return productSrv.getProducts();
+        }
+      }
     })
 
     .state ('shop.product', {
       url:'/product',
       templateUrl: 'site/partials/shop-product.html',
-      controller: 'ProductCtrl as ctrl'
+      controller: 'ShopCtrl as ctrl',
+      resolve:{
+        products: function(productSrv){
+          return productSrv.getProducts();
+        }
+      }
     })
     .state ('shop.item',{
       url:'/item',
       templateUrl: 'site/partials/shop-item.html',
-      controller: 'ItemCtrl as ctrl'
+      controller: 'ShopCtrl as ctrl'
     })
     .state ('shop.cart', {
       url:'/cart',

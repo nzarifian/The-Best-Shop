@@ -48,6 +48,7 @@ ProductCtrl.prototype.addProduct = function (){
 	};
 
 	ctrl.productSrv.addProduct(product);
+
 }
 
 

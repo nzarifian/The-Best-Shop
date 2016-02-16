@@ -8,13 +8,13 @@
 			</div>
 
 			<div class="product-info">
-				<div class="product-name" ng-click="ctrl.goToProduct(product)">
-					{{product.name}}
+				<div class="product-name">
+					<a ng-click="ctrl.toProduct(productId)">{{product.name}}</a>
 				</div>
-				<div class="product-brand" ng-click="ctrl.goToProduct(product)">
+				<div class="product-brand" ng-click="ctrl.toProduct(productId)">
 					<em>{{product.description}}</em>
 				</div>
-				<div class="product-cost" ng-click="ctrl.goToProduct(product)">
+				<div class="product-cost" ng-click="ctrl.toProduct(productId)">
 					{{product.price | currency}}
 				</div>
 			</div>

@@ -10,6 +10,9 @@ function OrderCtrl(api, productSrv, cartSrv, $state){
 	ctrl.$state = $state;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
+    ctrl.customer = {};
+
+
 }
 
 
@@ -62,10 +65,24 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+    var customer = {
+        firstName: ctrl.firstName,
+        lastName: ctrl.lastName,
+        email: ctrl.email,
+        address1: ctrl.address1,
+        apt: ctrl.apt,
+        city: ctrl.city,
+        province: ctrl.province,
+        postal: ctrl.postal
+    }
+
     ctrl.$state.go('submitOrder');
 }
 
 OrderCtrl.prototype.submitOrder = function(){
-    
+    var ctrl = this;
+
+    console.log(customer);
+
 }
 

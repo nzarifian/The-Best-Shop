@@ -46,7 +46,7 @@ ShopCtrl.prototype.addToCart = function(product){
 
 //function deletes selected item from cart//
 ShopCtrl.prototype.deleteCartItem = function(){}
-ShopCtrl.protoype.goToID = function(){
+ShopCtrl.prototype.goToID = function(){
 	var ctrl = this;
 	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
 }

@@ -2,18 +2,18 @@
 <h2>Your Order</h2>
     <table class="table">
         <tr>
+            <th>Item Name</th>
             <th>Description</th>
-            <th>Cost</th>
             <th>Qty</th>
-            <th>Total</th>
+            <th>Cost</th>
             <th>&nbsp;</th>
         </tr>
-        <tr ng-repeat="product in ctrl.cartSrv.cart">
-            <td>{{product.category}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.price | currency:undefined:0}}</td>
-            <td>{{product.quantity}}</td>
-            <td>{{product.description}}</td>
+        <tr ng-repeat="obj in ctrl.cartSrv.cart">
+            <td>{{obj.cartProduct.name}}</td>
+            <td>{{obj.cartProduct.description}}</td>
+            <td>{{obj.quantity}}</td>
+            <td>{{obj.quantity* obj.cartProduct.price| currency:undefined:0}}</td>
+            <button ng-click="">delete<button>
         <tr>
 
 

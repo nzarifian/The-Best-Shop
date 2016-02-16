@@ -47,3 +47,4 @@ ShopCtrl.protoype.goToID = function(){
 	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
 }
 
+

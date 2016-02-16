@@ -2,12 +2,12 @@
 
 <div class="sidebar">
 	<ul class="col-xs-12 col-sm-2">
-		<li>tops</li>
-		<li>bottoms</li>
-		<li>accessories</li>
-		<li>shoes</li>
-		<li>{{ctrl.test}}</li>
-	</ul>
+		<li ng-click ="ctrl.$location.path('/product/')">all</li>
+		<li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li>
+		<li>dresses</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">pants</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">outerwear</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>	</ul>
 </div>
 
 <div class="productview col-xs-12 col-sm-9">

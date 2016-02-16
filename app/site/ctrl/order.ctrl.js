@@ -4,45 +4,14 @@
 ;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, cartSrv, $state){
+function OrderCtrl(api, productSrv, cartSrv, $state,$scope){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
+    ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
 }
-
-
-OrderCtrl.prototype.CartForm = function($scope) {
-    // $scope.invoice = {
-    //     items: [{
-    //         quantity: 10,
-    //         description: 'item',
-    //         cost: 9.95}]
-    // };
-
-    $scope.addItem = function() {
-        $scope.invoice.items.push({
-            quantity: 1,
-            description: '',
-            cost: 0
-        });
-    },
-
-    $scope.removeItem = function(index) {
-        $scope.invoice.items.splice(index, 1);
-    },
-
-    $scope.total = function() {
-        var total = 0;
-        angular.forEach($scope.invoice.items, function(item) {
-            total += item.quantity * item.cost;
-        })
-
-        return total;
-    }
-}
-//function deletes selected item in cart//
 
 OrderCtrl.prototype.deleteCartItem = function(cartProduct){
     var ctrl = this; 

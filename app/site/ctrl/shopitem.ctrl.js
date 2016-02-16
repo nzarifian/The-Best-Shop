@@ -1,17 +1,18 @@
 app.controller('ShopCtrl',ShopCtrl);
 
-function ShopCtrl(productSrv, cartSrv, products, $scope, $state, api, $stateParams){
+function ShopCtrl(productSrv, cartSrv, products, $scope, $state, api, $stateParams,$location){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.productSrv = productSrv;
 	ctrl.cartSrv = cartSrv;
 	ctrl.$state = $state;
+	ctrl.$location = $location;
 
 	ctrl.$stateParams = $stateParams;
 	ctrl.productDetails = ctrl.productSrv.productDetails;
 
 	ctrl.products = products;
-	ctrl.category = '';
+	ctrl.category = $stateParams.category;
 
 	$scope.$watch(function(){
 		return productSrv.products;

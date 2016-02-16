@@ -6,7 +6,7 @@ var app = angular.module('shopApp',[
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('//main');
+  $urlRouterProvider.otherwise('main');
 
   $stateProvider
     .state ('shop',{
@@ -20,12 +20,12 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       }
     })
     .state ('shop.main', {
-      url:'/main',
+      url:'main',
       templateUrl: 'site/partials/shop-main.html',
     })
 
     .state ('shop.product', {
-      url:'/product',
+      url:'product/:category',
       templateUrl: 'site/partials/shop-product.html',
       controller: 'ShopCtrl as ctrl',
       resolve:{
@@ -35,7 +35,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       }
     })
     .state ('shop.item',{
-      url:'/item/:productId',
+      url:'item/:productId',
       templateUrl: 'site/partials/shop-item.html',
       controller: 'DetailsCtrl as ctrl',
       resolve:{

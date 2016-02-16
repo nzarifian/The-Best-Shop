@@ -1,26 +1,40 @@
-<!-- sidebar with all categories/links -->
-
 <div ui-view=""></div>
+<div class="sidebar">
+	<ul class="col-xs-12 col-sm-2">
+		<li ng-click ="ctrl.$location.path('/product/')">all</li>
+		<li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li>
+		<li>dresses</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">pants</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">outerwear</li>
+		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>
+	</ul>
+</div>
 
-<section class="product-view" role="product-view">
-	<div class="row">
-		<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
-			<div class="product-img" style="background:url('/assets/img/{{product.image}}');background-size:cover;background-position:center center" ng-click="ctrl.goToProduct(product)">
+<div class="productwrapper col-sm-9">
+
+	<div class="col-xs-12 col-sm-4" ng-repeat="product in ctrl.products 
+			| filter:search
+			| filter:{category:ctrl.category}">
+
+		<a ng-click="ctrl.toProduct(product,product.id)">
+			<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
+		</a>
+		
+		<div class="product-info">
+			<div class="product-name">
+				<a ng-click="ctrl.toProduct(product,product.id)">
+
+				<h4>{{product.name}}</h4>
+				</a>
 			</div>
 
-			<div class="product-info">
-				<div class="product-name" ng-click="ctrl.goToProduct(product)">
-					{{product.name}}
-				</div>
-				<div class="product-brand" ng-click="ctrl.goToProduct(product)">
-					<em>{{product.description}}</em>
-				</div>
-				<div class="product-cost" ng-click="ctrl.goToProduct(product)">
-					{{product.price | currency}}
-					<h3>price</h3>
-				<button class="addToCart" ng-click="ctrl.addToCart(product)">Add to Cart</button>
-				</div>
+			<div class="product-cost">
+				<a ng-click="ctrl.toProduct(product,product.id)">
+				<h5>{{product.price | currency}}</h5>
+				</a>
 			</div>
+
 		</div>
 	</div>
-<section>
+
+</div>

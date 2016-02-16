@@ -32,19 +32,16 @@ ShopCtrl.prototype.toProduct = function(product,productId){
 //function adds selected item to cart//
 ShopCtrl.prototype.addToCart = function(product){
 	var ctrl = this;
-	var obj = {
-		cartProduct: {
+	var cartProduct = {
 			name: product.name,
 			description:product.description,
 			price: product.price,
-		},
-		quantity: 1,
-	};
-	ctrl.cartSrv.cart.push(obj);
+			quantity: 1,
+		};
+	ctrl.cartSrv.cart.push(cartProduct);
 	console.log(ctrl.cartSrv.cart);
 }
-//function deletes selected item from cart//
-ShopCtrl.prototype.deleteCartItem = function(){}
+
 ShopCtrl.protoype.goToID = function(){
 	var ctrl = this;
 	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);

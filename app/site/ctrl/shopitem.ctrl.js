@@ -18,5 +18,5 @@ function ShopCtrl(productSrv, products, $scope, $state, api, $stateParams){
 
 ShopCtrl.prototype.toProduct = function(productId){
 	var ctrl = this;
-	ctrl.$state.go('shop.item',{productId:productId});
+	ctrl.$state.go('shop.item',{productId:product.id});
 }

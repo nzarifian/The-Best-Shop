@@ -34,9 +34,3 @@ ShopCtrl.prototype.addToCart = function(product){
 	var ctrl = this;
 	ctrl.cartSrv.cart.push(product);
 }
-
-ShopCtrl.protoype.goToID = function(){
-	var ctrl = this;
-	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
-}
-

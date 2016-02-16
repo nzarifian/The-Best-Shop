@@ -1,5 +1,5 @@
 <div class="jumbotron"></div>
-	<div ui-view=""></div>
+<div ui-view=""></div>
 
 <div class="section-header">
 	<h1>best sellers</h1>
@@ -7,23 +7,23 @@
 
 <div class="row align-shopmain">
 	<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
-		<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
+		<a ng-click="ctrl.toProduct(product,product.id)">
+			<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
+		</a>
+		
 		<div class="product-info">
 			<div class="product-name">
-<<<<<<< HEAD
-				<a ng-click="ctrl.toProduct(product.id)">
-=======
 				<a ng-click="ctrl.toProduct(product,product.id)">
->>>>>>> 59d2b08d0504d1885afdc90ef46ced8c95df836b
 				<h4>{{product.name}}</h4>
 				</a>
 			</div>
-<!-- 			<div class="product-brand" ng-click="ctrl.toProduct(productId)">
-				<em><p>{{product.description}}</em></p>
-			</div> -->
+
 			<div class="product-cost">
+				<a ng-click="ctrl.toProduct(product,product.id)">
 				<h5>{{product.price | currency}}</h5>
+				</a>
 			</div>
+
 		</div>
 	</div>
 </div>

@@ -1,10 +1,24 @@
-
 <div>
-</div>
 
-
+<aside>
+<h3> Purchase Summary </h3>
+<table class="table">
+        <tr ng-repeat="cartProduct in ctrl.cartSrv.cart">
+            <td>{{cartProduct.name}}</td>
+            <td>{{cartProduct.quantity}}</td>
+            <td>{{cartProduct.quantity* cartProduct.price| currency:undefined:0}}</td>
+        <tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{ctrl.total() | currency}}</td>
+        </tr>
+    </table>
+</aside>
 <h1>Shipping </h1>
 <!-- customer page after the cart where we get all details with shipping etc -->
+<form>
+	First Name<input type=text><br>
+	Last Name<input><br>
 <form name="frm" ng-submit="ctrl.reviewOrder()">
 	<div>
 		<label>First Name</label>
@@ -45,7 +59,7 @@
 	<button ng-click="ctrl.goToCart()">Back to Cart </button>
 	<button type="submit"> Review & Submit Order </button>
 </form>
-
+</div>
 <!-- Display GET product info-->
 <!-- Form for billing Information -->
 

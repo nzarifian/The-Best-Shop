@@ -24,15 +24,14 @@ function ProductCtrl(productSrv,$state,$stateParams,api,products){
 		productSrv.getProduct($stateParams.productId)
 		.then(function(res){
 			console.log(res);
-			ctrl.product = res.data.product;
-		
+			ctrl.product = res;
 			for (var index in ctrl.categories){
 				if(ctrl.product.category == ctrl.categories[index].value){
 					ctrl.category = ctrl.categories[index];
 				}
 			}
-		})
-	}
+		});
+	};
 }
 
 ProductCtrl.prototype.addProduct = function (){
@@ -52,14 +51,14 @@ ProductCtrl.prototype.addProduct = function (){
 }
 
 
-ProductCtrl.prototype.deleteProduct = function(){
+ProductCtrl.prototype.deleteProduct = function(productId){
 	var ctrl = this; 
-	//ctrl.product_delete_btn="Delete";
+	console.log('hello');
 	ctrl.productSrv.deleteProduct(ctrl.product.id);
 }
 
 ProductCtrl.prototype.updateProduct = function(){
 	var ctrl = this; 
-	ctrl.product.category = ctrl.category.value
+	ctrl.product.category = ctrl.category.value;
 	ctrl.productSrv.updateProduct(ctrl.product, ctrl.product.id);
 }

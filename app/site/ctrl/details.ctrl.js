@@ -1,9 +1,11 @@
 app.controller('DetailsCtrl',DetailsCtrl);
 
-function DetailsCtrl(productSrv, cartSrv,products, product, $scope, $state, api, $stateParams){
-	var ctrl = this;
+function DetailsCtrl(cartSrv,products, product,$location){
+	//dependencies//
+    var ctrl = this;
 	ctrl.cartSrv = cartSrv;
 	ctrl.product = product;
+    ctrl.$location = $location;
 }
 
 DetailsCtrl.prototype.addToCart = function(product){
@@ -16,4 +18,4 @@ DetailsCtrl.prototype.addToCart = function(product){
         };
     ctrl.cartSrv.cart.push(cartProduct);
     console.log(ctrl.cartSrv.cart);
-}
+};

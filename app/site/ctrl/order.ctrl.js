@@ -3,16 +3,23 @@
 //edit orders in backend
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state){
+
+function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state, $scope){
+
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
+    ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
+
     ctrl.orderSrv = orderSrv;
     ctrl.customer = ctrl.orderSrv.currentCustomer;
     ctrl.cart = cartSrv.cart;
     ctrl.order = ctrl.orderSrv.currentOrder;
+
+
+    ctrl.customer = {};
 
 }
 
@@ -47,6 +54,8 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+    ctrl.cartSrv.cart.push(cartProduct);
+
     var customer = {
         firstName: ctrl.firstName,
         lastName: ctrl.lastName,
@@ -71,6 +80,7 @@ OrderCtrl.prototype.submitOrder = function(){
     ctrl.orderSrv.currentOrder = order;
     ctrl.orderSrv.addOrder(ctrl.orderSrv.currentOrder);
     // ctrl.$state.go('orders');
+    // where do we want the page to go once order confirmed and submitted?
 
 }
 

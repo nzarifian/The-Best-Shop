@@ -31,9 +31,11 @@ OrderService.prototype.addOrder = function(order){
 	.then(function(res){
 		console.log(res);
 		if(res.status === 200){
-			//product was added successfully
+			//order was added successfully
 			_this.orders.push(res.data.order);
 			_this.state.go('admin.orders');
+			// change this state one login works on checkout page
+
 
 		}
 	})

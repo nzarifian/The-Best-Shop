@@ -6,7 +6,8 @@
 </div>
 
 <div class="row align-shopmain">
-	<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
+	<div class="col-xs-12 col-sm-3" 
+			ng-repeat="product in ctrl.products | filter:search">
 		<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
 		<div class="product-info">
 			<div class="product-name">

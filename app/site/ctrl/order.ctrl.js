@@ -43,6 +43,9 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+    ctrl.cartSrv.cart.push(cartProduct);
+
+
     ctrl.$state.go('submitOrder');
 }
 

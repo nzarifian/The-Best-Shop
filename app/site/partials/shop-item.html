@@ -6,17 +6,18 @@
 		<li>bottoms</li>
 		<li>accessories</li>
 		<li>shoes</li>
+		<li>{{ctrl.test}}</li>
 	</ul>
 </div>
 
 <div class="productview col-xs-12 col-sm-9">
-	<h1 class="text-center">{{ctrl.productDetails.name}}</h1>
+	<h1 class="text-center">{{ctrl.product.name}}</h1>
 			
-	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
+	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.product.image}}" width="100px">
 
 	<div class="itemDetails col-xs-12 col-sm-5">
-		{{ctrl.productDetails.description}}
+		{{ctrl.product.description}}
 	</div> 
 
-	<button ng-repeat="product in ctrl.products" class="addToCart" ng-click="ctrl.addToCart(product)">Add to Cart</button>
+	<button class="addToCart" ng-click="ctrl.addToCart(ctrl.product)">Add to Cart</button>
 </div>

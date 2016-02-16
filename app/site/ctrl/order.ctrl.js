@@ -15,43 +15,24 @@ function OrderCtrl(api, productSrv, cartSrv, $state){
 
 }
 
-
-OrderCtrl.prototype.CartForm = function($scope) {
-    // $scope.invoice = {
-    //     items: [{
-    //         quantity: 10,
-    //         description: 'item',
-    //         cost: 9.95}]
-    // };
-
-    $scope.addItem = function() {
-        $scope.invoice.items.push({
-            quantity: 1,
-            description: '',
-            cost: 0
-        });
-    },
-
-    $scope.removeItem = function(index) {
-        $scope.invoice.items.splice(index, 1);
-    },
-
-    $scope.total = function() {
-        var total = 0;
-        angular.forEach($scope.invoice.items, function(item) {
-            total += item.quantity * item.cost;
-        })
-
-        return total;
+//function deletes selected item in cart//
+OrderCtrl.prototype.deleteCartItem = function(cartProduct){
+    var ctrl = this; 
+    ctrl.cartProduct = cartProduct; 
+    var thisIndex;
+    for (var i = 0; i<ctrl.cartSrv.cart.length; i++){
+        ctrl.cartSrv.cart.splice(cartProduct[i], 1);
     }
 }
-//function adds selected item to cart//
 
-OrderCtrl.prototype.addToCart = function(){
-
+OrderCtrl.prototype.total=function(){
+    var total = 0
+    var ctrl = this;
+    angular.forEach(ctrl.cartSrv.cart, function(cartProduct){
+        total+= cartProduct.quantity * cartProduct.price;
+    })
+    return total;
 }
-
-
 
 OrderCtrl.prototype.checkout = function(){
     var ctrl = this; 

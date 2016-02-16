@@ -1,19 +1,17 @@
 // checkout in frontend
 // submit order in frontend
 //edit orders in backend
-
+;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, $state){
+function OrderCtrl(api, productSrv, cartSrv, $state){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
 	ctrl.productSrv = productSrv;
+    ctrl.cartSrv = cartSrv;
 }
 
-// OrderCtrl.prototype.getOrder = function(productSrv){
-// 	var ctrl = this; 
-// }
 
 OrderCtrl.prototype.CartForm = function($scope) {
     // $scope.invoice = {
@@ -44,5 +42,30 @@ OrderCtrl.prototype.CartForm = function($scope) {
         return total;
     }
 }
+//function adds selected item to cart//
 
+OrderCtrl.prototype.addToCart = function(){
+
+}
+
+
+
+OrderCtrl.prototype.checkout = function(){
+    var ctrl = this; 
+    ctrl.$state.go('checkout');
+}
+
+OrderCtrl.prototype.goToCart = function(){
+    var ctrl = this; 
+    ctrl.$state.go('shop.cart');
+}
+
+OrderCtrl.prototype.reviewOrder = function(){
+    var ctrl = this; 
+    ctrl.$state.go('submitOrder');
+}
+
+OrderCtrl.prototype.submitOrder = function(){
+    
+}
 

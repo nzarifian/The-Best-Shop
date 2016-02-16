@@ -11,7 +11,11 @@
 		<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
 		<div class="product-info">
 			<div class="product-name">
+
+				<a ng-click="ctrl.toProduct(product.id)">
+
 				<a ng-click="ctrl.toProduct(product,product.id)">
+
 				<h4>{{product.name}}</h4>
 				</a>
 			</div>

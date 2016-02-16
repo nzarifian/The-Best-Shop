@@ -40,19 +40,18 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       controller: 'DetailsCtrl as ctrl',
       resolve:{
         product: function(productSrv, $stateParams){
-          console.log('resolve is being hit');
           return productSrv.getProduct($stateParams.productId);
         }
       }
     })
     .state ('shop.cart', {
-      url:'/cart',
+      url:'cart',
       templateUrl: 'site/partials/shop-cart.html',
       controller: 'OrderCtrl as ctrl'
     })
 
     .state ('auth', {
-      url:'/auth',
+      url:'auth',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
       resolve:{
@@ -63,7 +62,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin', {
-      url:'/admin',
+      url:'admin',
       templateUrl: 'site/partials/admin-main.html',
       controller: 'AdminCtrl as ctrl',
       resolve:{
@@ -74,7 +73,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin.inventory', {
-      url:'/addedit',
+      url:'addedit',
       templateUrl: 'site/partials/admin-addedit.html',
       //controller: 'AdminCtrl as ctrl',
       resolve:{
@@ -85,7 +84,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin.inventory-add', {
-      url:'/add',
+      url:'add',
       templateUrl: 'site/partials/admin-add.html',
       controller: 'ProductCtrl as ctrl',
       resolve:{

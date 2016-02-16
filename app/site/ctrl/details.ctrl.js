@@ -4,11 +4,7 @@ function DetailsCtrl(productSrv, cartSrv, product,$location){
 	var ctrl = this;
 	ctrl.cartSrv = cartSrv;
 	ctrl.$location = $location;
-
-function DetailsCtrl(productSrv, cartSrv,products, product, $scope, $state, api, $stateParams){
-	var ctrl = this;
-	ctrl.cartSrv = cartSrv;
-	ctrl.product = product;
+    ctrl.product = product;
 }
 
 DetailsCtrl.prototype.addToCart = function(product){

@@ -24,7 +24,7 @@ function ProductCtrl(productSrv,$state,$stateParams,api,products){
 		productSrv.getProduct($stateParams.productId)
 		.then(function(res){
 			console.log(res);
-			ctrl.product = res.data.product;
+			ctrl.product = res;
 		
 			for (var index in ctrl.categories){
 				if(ctrl.product.category == ctrl.categories[index].value){

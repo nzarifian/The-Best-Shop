@@ -7,13 +7,14 @@
 		<li>dresses</li>
 		<li ng-click ="ctrl.$location.path('/product/pants')">pants</li>
 		<li ng-click ="ctrl.$location.path('/product/pants')">outerwear</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>	</ul>
+		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>
+	</ul>
 </div>
 
 <div class="productview col-xs-12 col-sm-9">
-	<h1 class="text-center">{{ctrl.product.name}}</h1>
+	<h1 class="text-center">{{ctrl.data.product.name}}</h1>
 			
-	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.product.image}}" width="100px">
+	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.product.image}}">
 
 	<div class="itemDetails col-xs-12 col-sm-5">
 		{{ctrl.product.description}}

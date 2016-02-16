@@ -11,17 +11,17 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
   $stateProvider
     .state ('shop',{
       url:'/',
-      templateUrl: 'site/partials/shop-nav.html'
-    })
-    .state ('shop.main', {
-      url:'/main',
-      templateUrl: 'site/partials/shop-main.html',
+      templateUrl: 'site/partials/shop-nav.html',
       controller: 'ShopCtrl as ctrl',
       resolve:{
         products: function(productSrv){
           return productSrv.getProducts();
         }
       }
+    })
+    .state ('shop.main', {
+      url:'/main',
+      templateUrl: 'site/partials/shop-main.html',
     })
 
     .state ('shop.product', {

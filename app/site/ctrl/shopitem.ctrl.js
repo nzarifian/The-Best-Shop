@@ -29,8 +29,26 @@ ShopCtrl.prototype.toProduct = function(product,productId){
 	ctrl.$state.go('shop.item',{productId:productId});
 }
 
-
+//function adds selected item to cart//
 ShopCtrl.prototype.addToCart = function(product){
 	var ctrl = this;
-	ctrl.cartSrv.cart.push(product);
+	var obj = {
+		cartProduct: {
+			name: product.name,
+			description:product.description,
+			price: product.price,
+		},
+		quantity: 1,
+	};
+	ctrl.cartSrv.cart.push(obj);
+	console.log(ctrl.cartSrv.cart);
 }
+
+//function deletes selected item from cart//
+ShopCtrl.prototype.deleteCartItem = function(){}
+ShopCtrl.protoype.goToID = function(){
+	var ctrl = this;
+	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
+}
+
+

@@ -4,16 +4,14 @@
 ;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, $state){
+function OrderCtrl(api, productSrv, cartSrv, $state){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
 	ctrl.productSrv = productSrv;
+    ctrl.cartSrv = cartSrv;
 }
 
-// OrderCtrl.prototype.getOrder = function(productSrv){
-// 	var ctrl = this; 
-// }
 
 OrderCtrl.prototype.CartForm = function($scope) {
     // $scope.invoice = {
@@ -47,7 +45,7 @@ OrderCtrl.prototype.CartForm = function($scope) {
 //function adds selected item to cart//
 
 OrderCtrl.prototype.addToCart = function(){
-    
+
 }
 
 

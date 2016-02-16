@@ -1,11 +1,11 @@
 app.controller('ShopCtrl',ShopCtrl);
 
-function ShopCtrl(productSrv, products, $scope, $state, api, $stateParams){
+function ShopCtrl(productSrv, cartSrv, products, $scope, $state, api, $stateParams){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.productSrv = productSrv;
+	ctrl.cartSrv = cartSrv;
 	ctrl.$state = $state;
-
 	ctrl.products = products;
 	ctrl.category = '';
 
@@ -18,5 +18,11 @@ function ShopCtrl(productSrv, products, $scope, $state, api, $stateParams){
 
 ShopCtrl.prototype.toProduct = function(productId){
 	var ctrl = this;
-	ctrl.$state.go('shop.item',{productId:product.id});
+	ctrl.$state.go('shop.item',{productId:productId});
+}
+
+
+ShopCtrl.prototype.addToCart = function(product){
+	var ctrl = this;
+	ctrl.cartSrv.cart.push(product);
 }

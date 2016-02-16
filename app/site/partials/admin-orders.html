@@ -1,11 +1,45 @@
-<div><!-- admin page to view all the orders, and make changes to details hopefully -->
+<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -105px;"><!-- admin page to view all the orders, and make changes to details hopefully -->
+    <h3>View All Orders</h3>
+
 
 	<h2>Admin Order Page</h2>
 
+    <hr style="margin-top: 5px; border-width:1px; border-color: #929292;">
 
 
-    <h1>View All Orders</h1>
+	<div ng-hide="ctrl.is_products">
+		<p>
+			You have no orders
+		</p>
+	</div>
+	
+	<br>
 
+	<div ng-show="ctrl.is_products">
+		<table class="products-list table">
+			<tr>
+				<th>Customer</th>
+				<th>City</th>
+				<th>Category</th>
+				<th>Item(s)</th>
+				<th>Price</th>
+				<th>Total</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr ng-repeat="product in ctrl.products">
+				<td>{{customer.firstName + customer.lastName}}</td>
+				<td>{{customer.city}}</td>
+				<td>{{product.category}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.totalCost}}</td>
+				<td><a ng-click="ctrl.editOrder()">Edit</a></td>
+			</tr>
+		</table>
+	</div>
 
-    <button>Edit Orders</button>
+	<div ui-view=""></div>
+
+</div>
+
+    
 

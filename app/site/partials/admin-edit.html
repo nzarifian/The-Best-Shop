@@ -1,4 +1,5 @@
-<div ui view="">
+<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -80px;">
+	<div ui view="">
 
 <h3>
 	Edit Product
@@ -16,11 +17,11 @@
 		</div>
 		<div>
 			<label>Description</label>
-			<textarea type="text" name="name" ng-model="ctrl.product.description" required></textarea>
+			<textarea type="text" name="description" ng-model="ctrl.product.description" required></textarea>
 		</div>
 		<div>
 			<label>Category</label>
-			<select  name="category" ng-options="option as option.label for option in ctrl.categories" ng-model="ctrl.product.category">
+			<select  name="category" ng-options="option as option.label for option in ctrl.categories" ng-model="ctrl.category">
 			</select>
 		</div>
 		<div>
@@ -38,4 +39,6 @@
 		</div>
 </article>
 
+
+	</div>
 </div>

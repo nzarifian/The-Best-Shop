@@ -35,9 +35,14 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       }
     })
     .state ('shop.item',{
-      url:'/item',
+      url:'/item/:productId',
       templateUrl: 'site/partials/shop-item.html',
-      controller: 'ShopCtrl as ctrl'
+      controller: 'ShopCtrl as ctrl',
+      resolve:{
+        products: function(productSrv){
+          return productSrv.getProducts();
+        }
+      }
     })
     .state ('shop.cart', {
       url:'/cart',

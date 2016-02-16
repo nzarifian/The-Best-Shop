@@ -1,6 +1,6 @@
 app.controller('ProductCtrl', ProductCtrl);
 
-function ProductCtrl(productSrv,$state,$stateParams,api){
+function ProductCtrl(productSrv,$state,$stateParams,api,products){
 	var ctrl = this;
 	ctrl.productSrv = productSrv;
 	ctrl.cartItems=[];
@@ -61,9 +61,4 @@ ProductCtrl.prototype.updateProduct = function(){
 	var ctrl = this; 
 	ctrl.product.category = ctrl.category.value
 	ctrl.productSrv.updateProduct(ctrl.product, ctrl.product.id);
-
 }
-
-// ProductCtrl.prototype.addToCart = function(){
-
-// }

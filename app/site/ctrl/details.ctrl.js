@@ -1,9 +1,8 @@
 app.controller('DetailsCtrl',DetailsCtrl);
 
-function DetailsCtrl(productSrv, cartSrv, product, $scope, $state, api, $stateParams){
+function DetailsCtrl(productSrv, cartSrv,products, product, $scope, $state, api, $stateParams){
 	var ctrl = this;
 	ctrl.cartSrv = cartSrv;
-
 	ctrl.product = product;
 }
 

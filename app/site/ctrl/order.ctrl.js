@@ -4,12 +4,14 @@
 ;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, cartSrv, $state){
+function OrderCtrl(api, productSrv, cartSrv, $state,$scope){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
+    ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
+    ctrl.customer = {};
 }
 
 //function deletes selected item in cart//
@@ -45,11 +47,24 @@ OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
     ctrl.cartSrv.cart.push(cartProduct);
 
+    var customer = {
+        firstName: ctrl.firstName,
+        lastName: ctrl.lastName,
+        email: ctrl.email,
+        address1: ctrl.address1,
+        apt: ctrl.apt,
+        city: ctrl.city,
+        province: ctrl.province,
+        postal: ctrl.postal
+    }
 
     ctrl.$state.go('submitOrder');
 }
 
 OrderCtrl.prototype.submitOrder = function(){
-    
+    var ctrl = this;
+
+    console.log(customer);
+
 }
 

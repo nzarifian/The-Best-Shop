@@ -5,6 +5,8 @@ function ShopCtrl(productSrv, products, $scope, $state, api, $stateParams){
 	ctrl.api = api;
 	ctrl.productSrv = productSrv;
 	ctrl.$state = $state;
+	ctrl.$stateParams = $stateParams;
+	ctrl.productDetails = ctrl.productSrv.productDetails;
 
 	ctrl.products = products;
 	ctrl.category = '';
@@ -16,7 +18,16 @@ function ShopCtrl(productSrv, products, $scope, $state, api, $stateParams){
 	});
 }
 
-ShopCtrl.prototype.toProduct = function(productId){
+ShopCtrl.prototype.toProduct = function(product,productId){
 	var ctrl = this;
+	ctrl.productSrv.productDetails = product;
+	//ctrl.productDetails = product;
+	console.log(productId);
+
 	ctrl.$state.go('shop.item',{productId:productId});
+}
+
+ShopCtrl.protoype.goToID = function(){
+	var ctrl = this;
+	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
 }

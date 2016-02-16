@@ -4,6 +4,7 @@ function ProductService($state,api){
 	//dependencies
 	this.api = api;
 	this.state = $state;
+	this.productDetails = {};
 	this.products = [];
 }
 

@@ -6,12 +6,10 @@ function ShopCtrl(productSrv, cartSrv, products, $scope, $state, api, $statePara
 	ctrl.productSrv = productSrv;
 	ctrl.cartSrv = cartSrv;
 	ctrl.$state = $state;
-<<<<<<< HEAD
-=======
+
 	ctrl.$stateParams = $stateParams;
 	ctrl.productDetails = ctrl.productSrv.productDetails;
 
->>>>>>> 59d2b08d0504d1885afdc90ef46ced8c95df836b
 	ctrl.products = products;
 	ctrl.category = '';
 

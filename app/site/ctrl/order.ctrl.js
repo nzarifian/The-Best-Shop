@@ -4,15 +4,14 @@
 ;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, cartSrv, $state){
+function OrderCtrl(api, productSrv, cartSrv, $state,$scope){
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
+    ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
     ctrl.customer = {};
-
-
 }
 
 //function deletes selected item in cart//

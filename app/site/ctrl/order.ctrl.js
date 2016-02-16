@@ -11,8 +11,10 @@ function OrderCtrl(api, productSrv, cartSrv, $state,$scope){
     ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
+    ctrl.customer = {};
 }
 
+//function deletes selected item in cart//
 OrderCtrl.prototype.deleteCartItem = function(cartProduct){
     var ctrl = this; 
     ctrl.cartProduct = cartProduct; 
@@ -20,6 +22,15 @@ OrderCtrl.prototype.deleteCartItem = function(cartProduct){
     for (var i = 0; i<ctrl.cartSrv.cart.length; i++){
         ctrl.cartSrv.cart.splice(cartProduct[i], 1);
     }
+}
+
+OrderCtrl.prototype.total=function(){
+    var total = 0
+    var ctrl = this;
+    angular.forEach(ctrl.cartSrv.cart, function(cartProduct){
+        total+= cartProduct.quantity * cartProduct.price;
+    })
+    return total;
 }
 
 OrderCtrl.prototype.checkout = function(){
@@ -34,10 +45,24 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+    var customer = {
+        firstName: ctrl.firstName,
+        lastName: ctrl.lastName,
+        email: ctrl.email,
+        address1: ctrl.address1,
+        apt: ctrl.apt,
+        city: ctrl.city,
+        province: ctrl.province,
+        postal: ctrl.postal
+    }
+
     ctrl.$state.go('submitOrder');
 }
 
 OrderCtrl.prototype.submitOrder = function(){
-    
+    var ctrl = this;
+
+    console.log(customer);
+
 }
 

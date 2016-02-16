@@ -1,7 +1,7 @@
 <div ui-view=""></div>
 
 <div class="sidebar">
-	<ul>
+	<ul class="col-xs-12 col-sm-2">
 		<li>tops</li>
 		<li>bottoms</li>
 		<li>accessories</li>
@@ -9,14 +9,16 @@
 	</ul>
 </div>
 
+<div class="productview col-xs-12 col-sm-8">
 	<h1 class="text-center">{{ctrl.productDetails.name}}</h1>
-	
-	<img ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
+			
+	<img class="col-xs-12 col-sm-8" ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
 
-	<div class="itemDetails">
+	<div class="itemDetails col-xs-12 col-sm-4">
 		{{ctrl.productDetails.description}}
 	</div> 
 
-    <div class="buttons" ng-click="ctrl.$state.go('/products')">
-    	<a class="btn btn-primary">Back</a>
-    </div>
+	<div class="buttons" ng-click="ctrl.$state.go('/products')">
+		<a class="btn btn-primary">Back</a>
+	</div>
+</div>

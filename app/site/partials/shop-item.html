@@ -9,16 +9,14 @@
 	</ul>
 </div>
 
-<div class="productview col-xs-12 col-sm-8">
+<div class="productview col-xs-12 col-sm-9">
 	<h1 class="text-center">{{ctrl.productDetails.name}}</h1>
 			
-	<img class="col-xs-12 col-sm-8" ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
+	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
 
-	<div class="itemDetails col-xs-12 col-sm-4">
+	<div class="itemDetails col-xs-12 col-sm-5">
 		{{ctrl.productDetails.description}}
 	</div> 
 
-	<div class="buttons" ng-click="ctrl.$state.go('/products')">
-		<a class="btn btn-primary">Back</a>
-	</div>
+	<button ng-repeat="product in ctrl.products" class="addToCart" ng-click="ctrl.addToCart(product)">Add to Cart</button>
 </div>

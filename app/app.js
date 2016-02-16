@@ -37,10 +37,11 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     .state ('shop.item',{
       url:'/item/:productId',
       templateUrl: 'site/partials/shop-item.html',
-      controller: 'ShopCtrl as ctrl',
+      controller: 'DetailsCtrl as ctrl',
       resolve:{
-        products: function(productSrv){
-          return productSrv.getProducts();
+        product: function(productSrv, $stateParams){
+          console.log('resolve is being hit');
+          return productSrv.getProduct($stateParams.productId);
         }
       }
     })

@@ -66,7 +66,10 @@ ProductService.prototype.deleteProduct = function(productId){
 
 ProductService.prototype.getProduct = function(productId){
 	var _this = this;
-	return this.api.request('/products/'+productId,{},'GET');
+	return this.api.request('/products/'+productId,{},'GET')
+			.then(function(res) {
+				return res.data.product;
+			});
 }
 
 ProductService.prototype.updateProductList = function(product,productId){

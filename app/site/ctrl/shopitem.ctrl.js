@@ -25,12 +25,3 @@ ShopCtrl.prototype.toProduct = function(product,productId){
 
 	ctrl.$state.go('shop.item',{productId:productId});
 }
-
-// //function deletes selected item from cart//
-// ShopCtrl.prototype.deleteCartItem = function(){}
-// ShopCtrl.protoype.goToID = function(){
-// 	var ctrl = this;
-// 	ctrl.products = (ctrl.productSrv).ctrl.getProduct(ctrl.$stateParams.productsId);
-// }
-
-

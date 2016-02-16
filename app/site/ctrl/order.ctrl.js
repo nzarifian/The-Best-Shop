@@ -42,13 +42,16 @@ OrderCtrl.prototype.CartForm = function($scope) {
         return total;
     }
 }
-//function adds selected item to cart//
+//function deletes selected item in cart//
 
-OrderCtrl.prototype.addToCart = function(){
-
+OrderCtrl.prototype.deleteCartItem = function(cartProduct){
+    var ctrl = this; 
+    ctrl.cartProduct = cartProduct; 
+    var thisIndex;
+    for (var i = 0; i<ctrl.cartSrv.cart.length; i++){
+        ctrl.cartSrv.cart.splice(cartProduct[i], 1);
+    }
 }
-
-
 
 OrderCtrl.prototype.checkout = function(){
     var ctrl = this; 

@@ -5,19 +5,16 @@ function DetailsCtrl(productSrv, cartSrv, product, $scope, $state, api, $statePa
 	ctrl.cartSrv = cartSrv;
 
 	ctrl.product = product;
-
 }
 
 DetailsCtrl.prototype.addToCart = function(product){
-	var ctrl = this;
-	var obj = {
-		cartProduct: {
-			name: product.name,
-			description:product.description,
-			price: product.price,
-		},
-		quantity: 1,
-	};
-	ctrl.cartSrv.cart.push(obj);
-	console.log(ctrl.cartSrv.cart);
+    var ctrl = this;
+    var cartProduct = {
+            name: product.name,
+            description:product.description,
+            price: product.price,
+            quantity: 1,
+        };
+    ctrl.cartSrv.cart.push(cartProduct);
+    console.log(ctrl.cartSrv.cart);
 }

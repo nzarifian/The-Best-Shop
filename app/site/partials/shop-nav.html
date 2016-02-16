@@ -1,11 +1,21 @@
-<nav>
+<div class="top">
+<div class="align-shopmain row title">
+	<i class="col-xs-1 fa fa-search" style="font-size:20px;margin-top:2.5%;"></i>
+
+	<div class="col-xs-4 col-xs-offset-3">
+		<h1>our brand name</h1>
+	</div>
+
+	<i class="col-xs-1 col-xs-offset-2 fa fa-shopping-cart"style="font-size:20px;margin-top:2.5%;" ui-sref="shop.cart"></i>
+
+	<i class="col-xs-1 fa fa-user"style="font-size:20px;margin-top:2.5%;" ui-sref="auth"></i>
+</div>
+
 		<ul>
-			<li><a ui-sref="shop.main">Home</a></li>
-			<li><a ui-sref="shop.product">Products</a></li>
-			<li><a ui-sref="shop.cart">Cart</a></li>
-			<li><a ui-sref="auth">Login</a></li>
-			<li>Search</li>
+			<li><a ui-sref="shop.main">home</a></li>
+			<li><a ui-sref="shop.product">products</a></li>
+			<li><a ui-sref="">collections</a></li>
 		</ul>
 
 		<div ui-view=""></div>
-</nav>
+</div>

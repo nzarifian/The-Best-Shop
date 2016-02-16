@@ -1,18 +1,12 @@
 <div ui-view=""></div>
 
-<
+	<h1 class="text-center">{{ctrl.productDetails.name}}</h1>
+	
+	<img ng-src="{{'/assets/img/' + ctrl.productDetails.image}}" width="100px">
 
-	<div class="itemwrapper" >
-		<div id="itemImage">
-			<h1 class="text-center">{{product.title}}</h1>
-			<div class="product-img" style="background:url('/assets/img/{{product.image}}');background-size:cover;background-position:center center" ng-click="ctrl.goToProduct(product)">
-			</div>
-	    </div>
-
-	    <div class="itemDetails">
-	    	{{product.description}}
-	    </div> 
-	</div>
+	<div class="itemDetails">
+		{{ctrl.productDetails.description}}
+	</div> 
 
     <div class="buttons" ng-click="ctrl.$state.go('/products')">
     	<a class="btn btn-primary">Back</a>

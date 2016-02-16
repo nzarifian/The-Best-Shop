@@ -7,11 +7,10 @@
 
 <div class="row align-shopmain">
 	<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
-		<div class="product-img" style="background:url('/assets/img/stripe-shirt.png')" ng-click="ctrl.goToProduct(product)">
-		</div>
+		<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
 		<div class="product-info">
 			<div class="product-name">
-				<a ng-click="ctrl.toProduct(productId)">
+				<a ng-click="ctrl.toProduct(product,product.id)">
 				<h4>{{product.name}}</h4>
 				</a>
 			</div>

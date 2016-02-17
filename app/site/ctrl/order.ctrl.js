@@ -52,8 +52,9 @@ OrderCtrl.prototype.goToCart = function(){
     ctrl.$state.go('shop.cart');
 }
 
-OrderCtrl.prototype.reviewOrder = function(){
+OrderCtrl.prototype.reviewOrder = function(cartProduct){
     var ctrl = this; 
+    ctrl.cartProduct = cartProduct;
     ctrl.cartSrv.cart.push(cartProduct);
 
     var customer = {
@@ -79,7 +80,8 @@ OrderCtrl.prototype.submitOrder = function(){
     };
     ctrl.orderSrv.currentOrder = order;
     ctrl.orderSrv.addOrder(ctrl.orderSrv.currentOrder);
-    // ctrl.$state.go('orders');
+    alert("Congratulations, your order is on it's way!");
+    ctrl.$state.go('shop.main');
     // where do we want the page to go once order confirmed and submitted?
 
 }

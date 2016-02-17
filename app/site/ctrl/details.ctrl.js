@@ -1,13 +1,11 @@
 app.controller('DetailsCtrl',DetailsCtrl);
 
-function DetailsCtrl(cartSrv,products, product,$location){
-	//dependencies//
-    var ctrl = this;
+function DetailsCtrl(productSrv, cartSrv, product,$location){
+	var ctrl = this;
 	ctrl.cartSrv = cartSrv;
-	ctrl.product = product;
-    ctrl.$location = $location;
+	ctrl.$location = $location;
+    ctrl.product = product;
 }
-
 DetailsCtrl.prototype.addToCart = function(product){
     var ctrl = this;
     var cartProduct = {

@@ -52,8 +52,9 @@ OrderCtrl.prototype.goToCart = function(){
     ctrl.$state.go('shop.cart');
 }
 
-OrderCtrl.prototype.reviewOrder = function(){
+OrderCtrl.prototype.reviewOrder = function(cartProduct){
     var ctrl = this; 
+    ctrl.cartProduct = cartProduct;
     ctrl.cartSrv.cart.push(cartProduct);
 
     var customer = {

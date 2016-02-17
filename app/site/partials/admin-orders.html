@@ -1,7 +1,12 @@
-<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -105px;"><!-- admin page to view all the orders, and make changes to details hopefully -->
+<!-- 
+<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -105px;"><!-- admin page to view all the orders, and make changes to details hopefully --> -->
     <h3>View All Orders</h3>
 
+
+	<h2>Admin Order Page</h2>
+
     <hr style="margin-top: 5px; border-width:1px; border-color: #929292;">
+
 
 	<div ng-hide="ctrl.is_products">
 		<p>
@@ -23,11 +28,11 @@
 				<th>&nbsp;</th>
 			</tr>
 			<tr ng-repeat="product in ctrl.products">
-				<td>{{customer.firstName + customer.lastName}}</td>
-				<td>{{customer.city}}</td>
+				<td>{{ctrl.orderSrv.orders}}</td>
+				<!-- <td>{{customer.city}}</td>
 				<td>{{product.category}}</td>
 				<td>{{product.name}}</td>
-				<td>{{product.totalCost}}</td>
+				<td>{{product.totalCost}}</td> -->
 				<td><a ng-click="ctrl.editOrder()">Edit</a></td>
 			</tr>
 		</table>

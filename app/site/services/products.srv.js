@@ -4,6 +4,7 @@ function ProductService($state,api){
 	//dependencies
 	this.api = api;
 	this.state = $state;
+	this.productDetails = {};
 	this.products = [];
 }
 
@@ -64,8 +65,11 @@ ProductService.prototype.deleteProduct = function(productId){
 }
 
 ProductService.prototype.getProduct = function(productId){
-	var _this = this
-	return this.api.request('/products/'+productId,{},'GET');
+	var _this = this;
+	return this.api.request('/products/'+productId,{},'GET')
+			.then(function(res) {
+				return res.data.product;
+			});
 }
 
 ProductService.prototype.updateProductList = function(product,productId){

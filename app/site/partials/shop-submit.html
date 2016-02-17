@@ -7,17 +7,25 @@
 			<li>Search</li>
 		</ul>
 	</nav>
+<!-- display customer info for review -->
+	<div class="customer">
+		{{ctrl.customer.firstName}}
+		{{ctrl.customer.lastName}}
+		{{ctrl.customer.email}}
+		{{ctrl.customer.address1}}
+		{{ctrl.customer.apt}}
+		{{ctrl.customer.city}}
+		{{ctrl.customer.province}}
+		{{ctrl.customer.postal}}
 
-	<div class="customerInformation">
-		{{customerinformation}}
 	</div>
-
+<!-- display order for review -->
 	<div class="customersProducts">
-		{{customersProducts}}
+		{{ctrl.cart}}
 	</div>
 
 	<div class="confirmation">
 		<h2>If this is all right, let's spend moneys, yay!</h2>
-		<button class="submit" ng-click="somefunction()">Submit</button>
+		<button class="submit" ng-click="ctrl.submitOrder()">Confirm</button>
 	</div>
 </div>

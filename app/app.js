@@ -6,16 +6,12 @@ var app = angular.module('shopApp',[
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('//main');
+  $urlRouterProvider.otherwise('main');
 
   $stateProvider
     .state ('shop',{
       url:'/',
-      templateUrl: 'site/partials/shop-nav.html'
-    })
-    .state ('shop.main', {
-      url:'/main',
-      templateUrl: 'site/partials/shop-main.html',
+      templateUrl: 'site/partials/shop-nav.html',
       controller: 'ShopCtrl as ctrl',
       resolve:{
         products: function(productSrv){
@@ -23,9 +19,13 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
         }
       }
     })
+    .state ('shop.main', {
+      url:'main',
+      templateUrl: 'site/partials/shop-main.html',
+    })
 
     .state ('shop.product', {
-      url:'/product',
+      url:'product/:category',
       templateUrl: 'site/partials/shop-product.html',
       controller: 'ShopCtrl as ctrl',
       resolve:{
@@ -35,12 +35,17 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       }
     })
     .state ('shop.item',{
-      url:'/item',
+      url:'item/:productId',
       templateUrl: 'site/partials/shop-item.html',
-      controller: 'ShopCtrl as ctrl'
+      controller: 'DetailsCtrl as ctrl',
+      resolve:{
+        product: function(productSrv, $stateParams){
+          return productSrv.getProduct($stateParams.productId);
+        }
+      }
     })
     .state ('shop.cart', {
-      url:'/cart',
+      url:'cart',
       templateUrl: 'site/partials/shop-cart.html',
       controller: 'OrderCtrl as ctrl'
     })
@@ -57,7 +62,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin', {
-      url:'/admin',
+      url:'admin',
       templateUrl: 'site/partials/admin-main.html',
       controller: 'AdminCtrl as ctrl',
       resolve:{
@@ -68,7 +73,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin.inventory', {
-      url:'/addedit',
+      url:'addedit',
       templateUrl: 'site/partials/admin-addedit.html',
       //controller: 'AdminCtrl as ctrl',
       resolve:{
@@ -79,7 +84,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin.inventory-add', {
-      url:'/add',
+      url:'add',
       templateUrl: 'site/partials/admin-add.html',
       controller: 'ProductCtrl as ctrl',
       resolve:{
@@ -101,7 +106,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
     .state ('admin.orders', {
       url:'/orders',
-      templateUrl: 'site/partials/admin-orders.html',
+       templateUrl: 'site/partials/admin-orders.html',
+       controller: 'OrderCtrl as ctrl'
       //controller: 'ProductCtrl as ctrl'
     })
     .state ('orders.updateOrder', {

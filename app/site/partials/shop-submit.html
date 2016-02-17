@@ -3,26 +3,40 @@
 		<ul>
 			<li><a href="shop-product.html">Products</a></li>
 			<li><a href="shop-cart.html">Cart</a></li>
-			<li><a href="admin-login.html">Login</a></li>
+			<li><a ui-sref="auth">Login</a></li>
 			<li>Search</li>
 		</ul>
 	</nav>
 <!-- display customer info for review -->
+
+<h3> Shipping Information </h3>
 	<div class="customer">
-		{{ctrl.customer.firstName}}
-		{{ctrl.customer.lastName}}
-		{{ctrl.customer.email}}
-		{{ctrl.customer.address1}}
-		{{ctrl.customer.apt}}
-		{{ctrl.customer.city}}
-		{{ctrl.customer.province}}
-		{{ctrl.customer.postal}}
+		{{ctrl.finalCustomer.firstName}}
+		{{ctrl.finalCustomer.lastName}}
+		{{ctrl.finalCustomer.email}}
+		{{ctrl.finalCustomer.address1}}
+		{{ctrl.finalCustomer.apt}}
+		{{ctrl.finalCustomer.city}}
+		{{ctrl.finalCustomer.province}}
+		{{ctrl.finalCustomer.postal}}
 
 	</div>
 <!-- display order for review -->
-	<div class="customersProducts">
-		{{ctrl.cart}}
-	</div>
+	<aside>
+<h3> Purchase Summary </h3>
+<table class="table" style="width:400px;">
+        <tr ng-repeat="cartProduct in ctrl.cartSrv.cart">
+            <td>{{cartProduct.name}}</td>
+            <td>{{cartProduct.quantity}}</td>
+            <td>{{cartProduct.quantity* cartProduct.price| currency:undefined:0}}</td>
+        <tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{ctrl.total() | currency}}</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</aside>
 
 	<div class="confirmation">
 		<h2>If this is all right, let's spend moneys, yay!</h2>

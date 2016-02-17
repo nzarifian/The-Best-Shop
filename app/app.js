@@ -62,7 +62,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('admin', {
-      url:'admin',
+      url:'/admin',
       templateUrl: 'site/partials/admin-main.html',
       controller: 'AdminCtrl as ctrl',
       resolve:{

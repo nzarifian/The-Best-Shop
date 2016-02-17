@@ -2,12 +2,12 @@
 
 <div class="sidebar">
 	<ul class="col-xs-12 col-sm-2">
-		<li ng-click ="ctrl.$location.path('/product/')">all</li>
-		<li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li>
-		<li>dresses</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">pants</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">outerwear</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>
+		<a><li ng-click ="ctrl.$location.path('/product/')">all</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/dress')">dresses</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/pants')">pants</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/outerwear')">outerwear</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shoes')">shoes</li></a>
 	</ul>
 </div>
 
@@ -18,8 +18,8 @@
 	<div class="itemDetails col-xs-12 col-sm-5">
 	<h2>{{ctrl.product.name}}</h2>
 	<h4>{{ctrl.product.price | currency}}</h4><br>
-	<h5>{{ctrl.product.description}}</h5><br>
+	<p>{{ctrl.product.description}}</p><br>
 
-		<button class="addToCart" ng-click="ctrl.addToCart(ctrl.product)">add to cart</button>
+		<button class="addToCart" ng-click="ctrl.addToCart(ctrl.product); toggle=!toggle"><span ng-show="toggle">product added!</span><span ng-hide="toggle">add to cart</span></button>
 	</div> 
 </div>

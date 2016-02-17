@@ -1,12 +1,12 @@
 <div ui-view=""></div>
 <div class="sidebar">
 	<ul class="col-xs-12 col-sm-2">
-		<li ng-click ="ctrl.$location.path('/product/')">all</li>
-		<li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li>
-		<li>dresses</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">pants</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">outerwear</li>
-		<li ng-click ="ctrl.$location.path('/product/pants')">shoes</li>
+		<a><li ng-click ="ctrl.$location.path('/product/')">all</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/dress')">dresses</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/pants')">pants</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/outerwear')">outerwear</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shoes')">shoes</li></a>
 	</ul>
 </div>
 
@@ -24,13 +24,13 @@
 			<div class="product-name">
 				<a ng-click="ctrl.toProduct(product,product.id)">
 
-				<h4>{{product.name}}</h4>
+				<h3>{{product.name}}</h3>
 				</a>
 			</div>
 
 			<div class="product-cost">
 				<a ng-click="ctrl.toProduct(product,product.id)">
-				<h5>{{product.price | currency}}</h5>
+				<p>{{product.price | currency}}</p>
 				</a>
 			</div>
 

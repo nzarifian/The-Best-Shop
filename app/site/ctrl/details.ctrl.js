@@ -6,7 +6,6 @@ function DetailsCtrl(productSrv, cartSrv, product,$location){
 	ctrl.$location = $location;
     ctrl.product = product;
 }
-
 DetailsCtrl.prototype.addToCart = function(product){
     var ctrl = this;
     var cartProduct = {
@@ -17,4 +16,4 @@ DetailsCtrl.prototype.addToCart = function(product){
         };
     ctrl.cartSrv.cart.push(cartProduct);
     console.log(ctrl.cartSrv.cart);
-}
+};

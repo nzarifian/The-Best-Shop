@@ -51,7 +51,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
 
     .state ('auth', {
-      url:'auth',
+      url:'/auth',
       templateUrl: 'site/partials/admin-login.html',
       controller: 'AuthCtrl as ctrl',
       resolve:{

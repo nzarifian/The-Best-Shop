@@ -45,6 +45,8 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+    ctrl.cartSrv.cart.push(cartProduct);
+
     var customer = {
         firstName: ctrl.firstName,
         lastName: ctrl.lastName,

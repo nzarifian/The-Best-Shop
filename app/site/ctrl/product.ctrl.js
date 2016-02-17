@@ -54,7 +54,6 @@ ProductCtrl.prototype.addProduct = function (){
 
 ProductCtrl.prototype.deleteProduct = function(productId){
 	var ctrl = this; 
-	console.log('hello');
 	ctrl.productSrv.deleteProduct(ctrl.product.id);
 }
 

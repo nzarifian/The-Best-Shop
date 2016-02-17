@@ -106,7 +106,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
     .state ('admin.orders', {
       url:'/orders',
-      templateUrl: 'site/partials/admin-orders.html',
+       templateUrl: 'site/partials/admin-orders.html',
+       controller: 'OrderCtrl as ctrl'
       //controller: 'ProductCtrl as ctrl'
     })
     .state ('orders.updateOrder', {

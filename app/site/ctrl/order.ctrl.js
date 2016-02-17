@@ -1,17 +1,26 @@
 // checkout in frontend
 // submit order in frontend
 //edit orders in backend
-;
 app.controller('OrderCtrl', OrderCtrl);
 
-function OrderCtrl(api, productSrv, cartSrv, $state,$scope){
+
+function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state, $scope){
+
 	var ctrl = this;
 	ctrl.api = api;
 	ctrl.$state = $state;
     ctrl.$scope = $scope;
 	ctrl.productSrv = productSrv;
     ctrl.cartSrv = cartSrv;
+
+    ctrl.orderSrv = orderSrv;
+    ctrl.customer = ctrl.orderSrv.currentCustomer;
+    ctrl.cart = cartSrv.cart;
+    ctrl.order = ctrl.orderSrv.currentOrder;
+
+
     ctrl.customer = {};
+
 }
 
 //function deletes selected item in cart//
@@ -57,14 +66,21 @@ OrderCtrl.prototype.reviewOrder = function(){
         province: ctrl.province,
         postal: ctrl.postal
     }
-
+    console.log(customer);
+    ctrl.orderSrv.currentCustomer = customer;
     ctrl.$state.go('submitOrder');
 }
 
 OrderCtrl.prototype.submitOrder = function(){
     var ctrl = this;
-
-    console.log(customer);
+    var order = {
+        customer: ctrl.customer,
+        cart: ctrl.cart
+    };
+    ctrl.orderSrv.currentOrder = order;
+    ctrl.orderSrv.addOrder(ctrl.orderSrv.currentOrder);
+    // ctrl.$state.go('orders');
+    // where do we want the page to go once order confirmed and submitted?
 
 }
 

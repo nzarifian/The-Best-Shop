@@ -78,6 +78,7 @@ OrderCtrl.prototype.submitOrder = function(){
         customer: ctrl.customer,
         cart: ctrl.cart
     };
+    
     ctrl.orderSrv.currentOrder = order;
     ctrl.orderSrv.addOrder(ctrl.orderSrv.currentOrder);
     alert("Congratulations, your order is on it's way!");

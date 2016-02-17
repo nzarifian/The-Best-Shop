@@ -1,17 +1,17 @@
-<section class="admin">
 
-<aside class="">
+<div class="top">
+<div class="align-shopmain row title">
 
+	<h1>our brand name</h1>
 
-<aside class="" style="margin-left: 20px; margin-top:50px;">
+</div>
 
-		<h3>Admin Panel</h3>
 		<ul>
-			<li><a ui-sref="admin.inventory">Inventory</a></li>
-			<li><a ui-sref="admin.orders">Orders</a></li>
-			<li><a ng-click="ctrl.logout()">Log Out</a></li>
+			<li><a ui-sref="shop.main">home</a></li>
+			<li><a ui-sref="admin.inventory">inventory</a></li>
+			<li><a ui-sref="admin.orders">orders</a></li>
+			<li><a ng-click="ctrl.logout()">log out</a></li>
 		</ul>
-</aside>
 
-	<div ui-view=""></div>
-</section>
+		<div ui-view=""></div>
+</div>

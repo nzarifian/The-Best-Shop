@@ -120,12 +120,12 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: 'site/partials/shop-search.html',
       controller: 'ProductCtrl as ctrl'
     })
-    .state('checkout', {
+    .state('shop.checkout', {
       url:'/checkout',
       templateUrl: 'site/partials/shop-checkout.html',
       controller: 'OrderCtrl as ctrl'
     })
-    .state('submitOrder', {
+    .state('shop.submitOrder', {
       url:'/submitOrder',
       templateUrl:'site/partials/shop-submit.html',
       controller: 'OrderCtrl as ctrl'

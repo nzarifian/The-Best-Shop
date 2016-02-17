@@ -10,7 +10,7 @@ DetailsCtrl.prototype.addToCart = function(product){
     var ctrl = this;
     var cartProduct = {
             name: product.name,
-            description:product.description,
+            image:product.image,
             price: product.price,
             quantity: 1,
         };

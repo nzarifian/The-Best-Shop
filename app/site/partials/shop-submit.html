@@ -1,31 +1,25 @@
-<div ui-view>
-<nav>
-		<ul>
-			<li><a href="shop-product.html">Products</a></li>
-			<li><a href="shop-cart.html">Cart</a></li>
-			<li><a href="admin-login.html">Login</a></li>
-			<li>Search</li>
-		</ul>
-	</nav>
+<div ui-view></div>
+
+<div class="inventory col-xs-offset-1 col-xs-10">
 <!-- display customer info for review -->
-	<div class="customer">
-		{{ctrl.customer.firstName}}
-		{{ctrl.customer.lastName}}
-		{{ctrl.customer.email}}
-		{{ctrl.customer.address1}}
-		{{ctrl.customer.apt}}
-		{{ctrl.customer.city}}
-		{{ctrl.customer.province}}
-		{{ctrl.customer.postal}}
+<div class="customer">
+	{{ctrl.customer.firstName}}
+	{{ctrl.customer.lastName}}
+	{{ctrl.customer.email}}
+	{{ctrl.customer.address1}}
+	{{ctrl.customer.apt}}
+	{{ctrl.customer.city}}
+	{{ctrl.customer.province}}
+	{{ctrl.customer.postal}}
 
-	</div>
+</div>
 <!-- display order for review -->
-	<div class="customersProducts">
-		{{ctrl.cart}}
-	</div>
+<div class="customersProducts">
+	{{ctrl.cart}}
+</div>
 
-	<div class="confirmation">
-		<h2>If this is all right, let's spend moneys, yay!</h2>
-		<button class="submit" ng-click="ctrl.submitOrder()">Confirm</button>
-	</div>
+<div class="confirmation">
+	<h2>If this is all right, let's spend moneys, yay!</h2>
+	<button class="submit" ng-click="ctrl.submitOrder()">Confirm</button>
+</div>
 </div>

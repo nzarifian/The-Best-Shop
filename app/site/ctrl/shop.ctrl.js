@@ -25,6 +25,8 @@ ShopCtrl.prototype.toProduct = function(product,productId){
 	var ctrl = this;
 
 	ctrl.$state.go('shop.item',{productId:productId});
+	$scope.quantity = 4;
+
 }
 
 //function adds selected item to cart//
@@ -33,7 +35,7 @@ ShopCtrl.prototype.addToCart = function(product){
 	var obj = {
 		cartProduct: {
 			name: product.name,
-			description:product.description,
+			image: product.image,
 			price: product.price,
 		},
 		quantity: 1,

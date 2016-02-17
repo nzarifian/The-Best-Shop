@@ -21,6 +21,14 @@ function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state, $scope){
 
     ctrl.customer = {};
 
+    $scope.$watch(function() {
+        return cartSrv.cart;
+    }, function(newVal) {
+        if (newVal.length > 0) {
+            ctrl.is_products = true;
+        }
+    })
+
 }
 
 //function deletes selected item in cart//
@@ -44,7 +52,7 @@ OrderCtrl.prototype.total=function(){
 
 OrderCtrl.prototype.checkout = function(){
     var ctrl = this; 
-    ctrl.$state.go('checkout');
+    ctrl.$state.go('shop.checkout');
 }
 
 OrderCtrl.prototype.goToCart = function(){
@@ -69,7 +77,7 @@ OrderCtrl.prototype.reviewOrder = function(cartProduct){
     }
     console.log(customer);
     ctrl.orderSrv.currentCustomer = customer;
-    ctrl.$state.go('submitOrder');
+    ctrl.$state.go('shop.submitOrder');
 }
 
 OrderCtrl.prototype.submitOrder = function(){

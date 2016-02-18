@@ -16,6 +16,11 @@ OrderService.prototype.getOrders = function(){
 		//success promise
 		console.log(res);
 		_this.orders = res.data.orders;
+
+		for(var i = 0;i<_this.orders.length;i++){
+            _this.orders[i].cart = JSON.parse(_this.orders[i].cart);
+        }
+        
 		return res.data.orders;
 	},function(res){
 		//error promise
@@ -33,7 +38,7 @@ OrderService.prototype.addOrder = function(order){
 		if(res.status === 200){
 			//order was added successfully
 			_this.orders.push(res.data.order);
-			_this.state.go('admin.orders');
+			_this.state.go('shop.lastpage');
 			// change this state one login works on checkout page
 
 

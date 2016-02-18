@@ -32,7 +32,10 @@ td, th{
 .table th{
 	text-align:center;
 }
-
+.fa{
+	font-size:30px;
+	margin-left:20px;
+}
 /*
 Globals
 */
@@ -84,7 +87,7 @@ Nav
 	margin-top:2.5%;
 }
 /*main shop page*/
-.align-shopmain footer{
+.align-shopmain {
 	margin-right: 2.5%;
 	margin-left: 2.5%;
 	margin-bottom: 2.5%;
@@ -150,9 +153,28 @@ Nav
 	padding:75px;
 }
 footer{
-	margin-top:2.5%;
+	width:100%;
 	background-color: #E8E8E8;
-	color: #23527c;
-	padding-top:2.5%;
-	padding-bottom:2.5%;
+	color: grey;
+	overflow: auto;
+	padding-top: 50px;
+	padding-bottom:50px;
+	margin-left:0;
+}
+footer > div {
+	width:50%;
+	float:left;
+}
+
+@media (min-width: 768px)
+.col-sm-3 {
+    width: 24.9%;
+
+}
+
+.productview{
+	margin-bottom:100px;
+}
+.row{
+	margin:0;
 }

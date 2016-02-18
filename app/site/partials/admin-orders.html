@@ -1,46 +1,65 @@
-<!-- 
-<div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -105px;"><!-- admin page to view all the orders, and make changes to details hopefully --> -->
-    <h3>View All Orders</h3>
+<h3>View All Orders</h3>
 
-
-	<h2>Admin Order Page</h2>
-
-    <hr style="margin-top: 5px; border-width:1px; border-color: #929292;">
-
-
-	<div ng-hide="ctrl.is_products">
-		<p>
-			You have no orders
-		</p>
-	</div>
-	
-	<br>
-
-	<div ng-show="ctrl.is_products">
+    
+	<div class="inventory col-xs-offset-1 col-xs-10">
 		<table class="products-list table">
-			<tr>
-				<th>Customer</th>
-				<th>City</th>
+<!-- 			<tr>
 				<th>Category</th>
-				<th>Item(s)</th>
+				<th>Name</th>
 				<th>Price</th>
-				<th>Total</th>
-				<th>&nbsp;</th>
+				<th>Quantity</th>
+				<th>Description</th>
+				<th>Edit</th>
+			</tr> -->
+			<tr>
+				<th>id</th>
+				<th>number of items</th>
+				<th>total $</th>
 			</tr>
-			<tr ng-repeat="product in ctrl.products">
-				<td>{{ctrl.orderSrv.orders}}</td>
-				<!-- <td>{{customer.city}}</td>
-				<td>{{product.category}}</td>
-				<td>{{product.name}}</td>
-				<td>{{product.totalCost}}</td> -->
-				<td><a ng-click="ctrl.editOrder()">Edit</a></td>
+			<tr ng-repeat="orders in ctrl.orders">
+				<td>{{orders.id}}</td>
+				<td>{{orders.cart.length}}</td>
+				<td>{{orders.total}}</td>
 			</tr>
+<!-- 
+			<tr>
+				<td>{{things.category}}</td>
+				<td>{{things.name}}</td>
+				<td>{{things.price | currency:undefined:0}}</td>
+				<td>{{things.quantity}}</td>
+				<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
+			</tr>
+		</table>
+		<table class="products-list table">
+		<div ng-repeat="orders in ctrl.orders">
+			<tr ng-repeat="things in orders.cart">
+				<td>{{things.category}}</td>
+				<td>{{things.name}}</td>
+				<td>{{things.price | currency:undefined:0}}</td>
+				<td>{{things.quantity}}</td>
+				<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
+			</tr> -->
 		</table>
 	</div>
 
-	<div ui-view=""></div>
+<!-- 
+<div class="inventory col-xs-offset-1 col-xs-10" ng-repeat="orders in ctrl.orders">
 
-</div>
+	<div class="orders">
+		<p>category</p>
+		<p>name</p>
+		<p>price</p>
+		<p>quantity</p>
+		<p>edit</p>
+	</div>
 
-    
+	<div class="ordersinfo" ng-repeat="things in orders.cart">
+		<p>{{things.category}}</p>
+		<p>{{things.name}}</p>
+		<p>{{things.price | currency}}</p>
+		<p>{{things.quantity}}</p>
+		<p><a ng-click="ctrl.editProduct(product)">edit</a></p>
+	</div>
 
+
+</div> -->

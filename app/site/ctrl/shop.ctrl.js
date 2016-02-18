@@ -25,7 +25,6 @@ ShopCtrl.prototype.toProduct = function(product,productId){
 	var ctrl = this;
 
 	ctrl.$state.go('shop.item',{productId:productId});
-	$scope.quantity = 4;
 
 }
 

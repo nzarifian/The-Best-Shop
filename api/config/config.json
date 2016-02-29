@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "",
-    "password": "",
+    "username": "postgress",
+    "password": "postgress",
     "database": "shopapp",
     "host": "127.0.0.1",
-    "dialect": "sqlite"
+    "dialect": "postgress"
   },
   "test": {
     "username": "root",

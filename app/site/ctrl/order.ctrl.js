@@ -16,12 +16,12 @@ function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state, $scope, orders){
     console.log(orders);
 
     ctrl.orderSrv = orderSrv;
-    ctrl.customer = ctrl.orderSrv.currentCustomer;
     ctrl.cart = cartSrv.cart;
     ctrl.order = ctrl.orderSrv.currentOrder;
 
     ctrl.finalCustomer = ctrl.orderSrv.currentCustomer;
     ctrl.customer = {};
+<<<<<<< HEAD
 
     $scope.$watch(function() {
         return cartSrv.cart;
@@ -31,6 +31,9 @@ function OrderCtrl(api, productSrv, cartSrv, orderSrv, $state, $scope, orders){
         }
     })
 
+=======
+    console.log('hi us');
+>>>>>>> 1cb48f7cd6218d694d54b6be4cd4f78ea8eafe88
 }
 
 //function deletes selected item in cart//
@@ -64,6 +67,11 @@ OrderCtrl.prototype.goToCart = function(){
 
 OrderCtrl.prototype.reviewOrder = function(){
     var ctrl = this; 
+<<<<<<< HEAD
+=======
+    // ctrl.cartProduct = cartProduct;
+    // ctrl.cartSrv.cart.push(cartProduct);
+>>>>>>> 1cb48f7cd6218d694d54b6be4cd4f78ea8eafe88
 
     var customer = {
         firstName: ctrl.firstName,
@@ -102,7 +110,38 @@ OrderCtrl.prototype.getOrders = function(){
         lastName: ctrl.lastName,
         status:'active'
     };
+<<<<<<< HEAD
+=======
+    
+    ctrl.orderSrv.currentOrder = order;
+    ctrl.orderSrv.addOrder(ctrl.orderSrv.currentOrder);
+    alert("Congratulations, your order is on it's way!");
+    //ctrl.$state.go('shop.main');
+    // where do we want the page to go once order confirmed and submitted?
+>>>>>>> 1cb48f7cd6218d694d54b6be4cd4f78ea8eafe88
 
     ctrl.orderSrv.getOrders(order);
 }
 
+OrderCtrl.prototype.getOrders = function (){
+    var ctrl = this;
+    var order = {
+        firstName: ctrl.firstName,
+        lastName: ctrl.lastName,
+        status:'active'
+    };
+
+    ctrl.orderSrv.getOrders(order);
+
+}
+
+// OrderCtrl.prototype.deleteOrder = function(productId){
+//     var ctrl = this; 
+//     ctrl.productSrv.deleteProduct(ctrl.product.id);
+// }
+
+// OrderCtrl.prototype.updateOrder = function(){
+//     var ctrl = this; 
+//     ctrl.product.category = ctrl.category.value;
+//     ctrl.productSrv.updateProduct(ctrl.product, ctrl.product.id);
+// }
